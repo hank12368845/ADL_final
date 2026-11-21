@@ -1,0 +1,76 @@
+{
+  "status": "CPU checks passed; no real-model GPU run performed",
+  "training_rows": 3072,
+  "validation_rows": 384,
+  "planned_optimizer_steps": 16,
+  "planned_samples": 128,
+  "cpu_tests": {
+    "passed": 31,
+    "log": "/tmp/adl_v22_cpu_tests.log",
+    "command": "OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 /home/hank/.cache/adl_final_venv/bin/python -m unittest training.test_buyer_operations training.test_buyer_operations_v2 training.test_buyer_operations_v2_1 training.test_buyer_operations_v2_2 training.test_training_gpu_plan training.test_market_load_balance -v"
+  },
+  "audit": {
+    "experiment": "buyer_operations_v2_2_first_token",
+    "control_run": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/training/runs/20261118-233240_buyer_operations_pa514zcv",
+    "control_config_sha256": "cbe804575851baab582ef14883c40671dc018a112d09cebb97f9752b8776303a",
+    "data_manifest_sha256": "84247100188765134483ca5bce24023b607321747f80ae5814686c779d52ee5f",
+    "cash_cases_sha256": "de79f9e794e6d2ff722f9b5b4f2bcf2ceffaf421f98176bc27ec6ced007d4017",
+    "batch_plan_sha256": "a67987de5084a45cf5ab5b7da4043361dcadeb060d7a31a19e79cb3c334fea88",
+    "control_checkpoints": {
+      "step_0008": {
+        "adapter_config.json": "3f76526075f53749c5ecb75b2b77b4c83f1727a7c3862523586c21145411a080",
+        "adapter_model.safetensors": "0a73f53853e99363d31d66bd564cd90c306ff71f1501011b0d85f1a18908bd58"
+      },
+      "step_0012": {
+        "adapter_config.json": "3f76526075f53749c5ecb75b2b77b4c83f1727a7c3862523586c21145411a080",
+        "adapter_model.safetensors": "277b590d31912536507cad0d8aeb4ad73100448023037ccd7f9db860e846a78b"
+      },
+      "final": {
+        "adapter_config.json": "3f76526075f53749c5ecb75b2b77b4c83f1727a7c3862523586c21145411a080",
+        "adapter_model.safetensors": "65d090b7099c1c1ef4f6801f689bab66f34200f3dba210a4c7429615121885b0"
+      }
+    },
+    "control_samples_by_rank": {
+      "0": 64,
+      "1": 64
+    },
+    "first_tool_token_ids": {
+      "buy_listed": 19180,
+      "wait": 11158,
+      "accept_offer": 10024
+    },
+    "tool_name_token_lengths": {
+      "buy_listed": [
+        3
+      ],
+      "wait": [
+        1
+      ],
+      "accept_offer": [
+        2
+      ]
+    },
+    "changed_training_factor": "auxiliary mean tool-name CE -> first tool-name token CE",
+    "note": "Historical single-run control, not a replicated causal or market-score claim."
+  },
+  "source_sha256": {
+    "training/buyer_operations_train.py": "f1a915294db408b8e6c0831968dfb928fb5a3d9be6949749c3fcd771d573cca7",
+    "training/train_buyer_operations.py": "4255b8aa025e25825045caf6b5b5cdb42eff7e00f4304404f876ca5d7a342880",
+    "training/decision_ablation.py": "2bbd91719ac96e4687548f5afad5bed1688a4fb738cb9176972c2d0c1e67d5d0",
+    "training/cash_decision_report.py": "3050a4b53a4063c34dc3c476e66af5f26803dd06e5b95e1aae5461f3eb28098f",
+    "training/evaluate_buyer_operations_v2_2.py": "f70c6c55d6380114e3328dd93180cb4cce336ed5830d1dc6117330ad7f9fe8bf",
+    "training/buyer_diagnostics.py": "665d700af9c4e8c7ce6d24f9f5ff4ac5f7441d55eafce6822160db6753d39541",
+    "training/configs/buyer_operations_v2_2.yaml": "eddb0aa77068653d7648b92b16a587ac8ab521892110f65e758e30b457f90b17",
+    "training/test_buyer_operations_v2_2.py": "204bd12ca90fe77979eee66cd4708925eb402b68d460928659e499133cc4625c"
+  },
+  "fake_worker_checks": {
+    "calls": 576,
+    "gpu_routes": {
+      "0": 288,
+      "1": 288
+    },
+    "models": 3,
+    "both_correct_max_per_model": 96,
+    "note": "Fake client only; these are route/report checks, not real model performance."
+  }
+}

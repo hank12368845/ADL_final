@@ -1,0 +1,11 @@
+id: ta_buyer_extra_3
+role: buyer
+owner: ta
+controller: llm
+model: ta
+reasoning: true
+lora: ../../agents/_ta/buyer/checkpoint
+persona_text: 'You are a quick buyer: buy the items you value most first, at any fair
+  price.
+
+  '

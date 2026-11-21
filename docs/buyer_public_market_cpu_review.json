@@ -1,0 +1,35 @@
+{
+  "date": "2026-11-19",
+  "unit_tests_passed": 8,
+  "test_seconds": 32.99,
+  "test_log": "/tmp/adl_market_review_tests.log",
+  "mock_end_to_end_suite": "/tmp/adl_full_market_cpu/20261119-195619_buyer_market_review_rs3sfr80",
+  "mock_markets": 10,
+  "mock_actions": 4500,
+  "paired_surplus_equal_under_mock": true,
+  "actual_gpu_work_started": false,
+  "candidate": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/training/runs/20261119-134251_buyer_operations_50lhkufb/checkpoints/step_0032",
+  "candidate_fingerprints": {
+    "adapter_config.json": "3f76526075f53749c5ecb75b2b77b4c83f1727a7c3862523586c21145411a080",
+    "adapter_model.safetensors": "47c421cb0bc68e3ead0336d3c1404c43094ebfe31d9af56e3c1daa994879e037"
+  },
+  "paired_seats_seed_and_rotation_identical": true,
+  "checks": [
+    "Correct adapter vs no-adapter base ON",
+    "Same three frozen training personas",
+    "Official market spec / phase2 channels",
+    "Five seller-stock rotations",
+    "Two-card resolved endpoint equivalence",
+    "Observed collision vs nonexistent listing distinction",
+    "Budget-exhausted waits / visible-positive waits",
+    "Original engine surplus accounting",
+    "Mock/partial reports cannot claim real performance",
+    "Progress and immutable-input checks"
+  ],
+  "files_sha256": {
+    "training/evaluate_buyer_market.py": "b655c2dbe6d4fad371b7b0f0151d355b237f65fa7e5cc26bd190108ee8a56334",
+    "training/buyer_market_report.py": "8ed7888c5e03b63af807950b1ece0b934873954bfe48500921d099877a82034b",
+    "training/test_buyer_market_review.py": "ba58d4d8e79f7ef3cddafd0360d9960fbb0e476e369ae7b504b6080f08629586"
+  },
+  "limitation": "CPU/mock validates the pipeline only. User must launch real inference; candidate is not yet a proven market winner."
+}

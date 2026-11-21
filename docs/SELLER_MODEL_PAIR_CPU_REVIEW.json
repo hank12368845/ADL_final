@@ -1,0 +1,108 @@
+{
+  "cpu_only": true,
+  "gpu_work": false,
+  "real_models_evaluated": false,
+  "mock_full_actions_verified": 900,
+  "tests_passed": 6,
+  "test_log": "/tmp/adl_seller_model_pair_tests.log",
+  "prepared_folder": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/results/basic_checks/20261121-151510_seller_models_87fz7bkq",
+  "plan": {
+    "experiment": "seller_starter_step46_v1",
+    "seed": 5,
+    "arms": {
+      "starter": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/results/basic_checks/20261121-151510_seller_models_87fz7bkq/starter",
+      "step46": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/results/basic_checks/20261121-151510_seller_models_87fz7bkq/step46"
+    },
+    "initial_signature": "58340378f3a8b4ca6a9a50f516987e1699b839898c5f1439409d0d4af2ce2f5f",
+    "total_actions": 900,
+    "target_actions": 180,
+    "candidate_provenance": {
+      "adapter": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/training/runs/20261121-135008_seller_official_9d95_ubx/checkpoints/step_0046",
+      "fingerprints": {
+        "adapter_config.json": "3f76526075f53749c5ecb75b2b77b4c83f1727a7c3862523586c21145411a080",
+        "adapter_model.safetensors": "4cbc95efa12e514446f4446dddd75f6347c0abbf3aa05c80841499c02cd9c9de"
+      },
+      "training_run": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/training/runs/20261121-135008_seller_official_9d95_ubx",
+      "checkpoint_complete_sha256": "6cda0699c28b2c8614f0f56b195f227c95b8c5a7739ee589ccc99c82794e976f",
+      "training_config_sha256": "a18dfe4d5a613c815fc7fdc84958335a38fdade43042856c184fa3043cc9534f"
+    },
+    "automatic_promotion": false,
+    "training_updates": 0
+  },
+  "arms": {
+    "starter": {
+      "adapter": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/agents/example_student/seller/checkpoint",
+      "initial_signature": "58340378f3a8b4ca6a9a50f516987e1699b839898c5f1439409d0d4af2ce2f5f",
+      "personas_match_v2": true,
+      "source_guard": true,
+      "rules": {
+        "history_turns": 6,
+        "rounds": {
+          "total": 5,
+          "turns_per_round": 6,
+          "free_messages": 0,
+          "output_tokens_per_round": 8192
+        }
+      },
+      "targets": {
+        "example_student_seller_p1": {
+          "api_model": "lora-example_student_seller",
+          "adapter": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/agents/example_student/seller/checkpoint",
+          "reasoning": true
+        },
+        "example_student_seller_p2": {
+          "api_model": "lora-example_student_seller",
+          "adapter": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/agents/example_student/seller/checkpoint",
+          "reasoning": true
+        },
+        "example_student_seller_p3": {
+          "api_model": "lora-example_student_seller",
+          "adapter": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/agents/example_student/seller/checkpoint",
+          "reasoning": true
+        }
+      }
+    },
+    "step46": {
+      "adapter": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/training/runs/20261121-135008_seller_official_9d95_ubx/checkpoints/step_0046",
+      "initial_signature": "58340378f3a8b4ca6a9a50f516987e1699b839898c5f1439409d0d4af2ce2f5f",
+      "personas_match_v2": true,
+      "source_guard": true,
+      "rules": {
+        "history_turns": 6,
+        "rounds": {
+          "total": 5,
+          "turns_per_round": 6,
+          "free_messages": 0,
+          "output_tokens_per_round": 8192
+        }
+      },
+      "targets": {
+        "example_student_seller_p1": {
+          "api_model": "lora-example_student_seller",
+          "adapter": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/training/runs/20261121-135008_seller_official_9d95_ubx/checkpoints/step_0046",
+          "reasoning": true
+        },
+        "example_student_seller_p2": {
+          "api_model": "lora-example_student_seller",
+          "adapter": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/training/runs/20261121-135008_seller_official_9d95_ubx/checkpoints/step_0046",
+          "reasoning": true
+        },
+        "example_student_seller_p3": {
+          "api_model": "lora-example_student_seller",
+          "adapter": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/training/runs/20261121-135008_seller_official_9d95_ubx/checkpoints/step_0046",
+          "reasoning": true
+        }
+      }
+    }
+  },
+  "checks": [
+    "same full initial market and v2 personas",
+    "only student adapter differs",
+    "opponents unchanged",
+    "dual routes and single-card rules",
+    "full900 mock and skip completed resume",
+    "stock/unchanged-price/grade distinctions",
+    "prepare-only no GPU query",
+    "precise startup race requeue; runtime failure stop"
+  ]
+}

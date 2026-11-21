@@ -1,0 +1,666 @@
+{
+  "buyer_source_guard_pass": true,
+  "buyer_initial_plan_pass": true,
+  "buyer_markets": 15,
+  "buyer_ledgers_verified": 45,
+  "buyer_summary": {
+    "example_student_buyer_p1": {
+      "markets": 15,
+      "mean_surplus": 112.08933333333333,
+      "minimum": -58.9,
+      "maximum": 177.04,
+      "by_economy": {
+        "0": 89.634,
+        "1": 105.226,
+        "2": 141.40800000000002
+      },
+      "zero_marginal_spend": 371.33,
+      "absent_board_pairs": 50,
+      "truncated_turns": 5,
+      "budget_waits": 4,
+      "cash_errors": 0,
+      "model_failures": 0,
+      "longest_absent_pair_retry": 1
+    },
+    "example_student_buyer_p2": {
+      "markets": 15,
+      "mean_surplus": 125.99333333333333,
+      "minimum": 27.55,
+      "maximum": 214.69,
+      "by_economy": {
+        "0": 166.992,
+        "1": 107.548,
+        "2": 103.44
+      },
+      "zero_marginal_spend": 277.88,
+      "absent_board_pairs": 47,
+      "truncated_turns": 8,
+      "budget_waits": 17,
+      "cash_errors": 0,
+      "model_failures": 0,
+      "longest_absent_pair_retry": 1
+    },
+    "example_student_buyer_p3": {
+      "markets": 15,
+      "mean_surplus": 136.262,
+      "minimum": 58.14,
+      "maximum": 222.91,
+      "by_economy": {
+        "0": 157.932,
+        "1": 146.314,
+        "2": 104.53999999999999
+      },
+      "zero_marginal_spend": 413.52,
+      "absent_board_pairs": 41,
+      "truncated_turns": 4,
+      "budget_waits": 8,
+      "cash_errors": 0,
+      "model_failures": 0,
+      "longest_absent_pair_retry": 1
+    }
+  },
+  "buyer_negative_markets": [
+    {
+      "persona": "example_student_buyer_p1",
+      "market": "e0_m0_r2",
+      "surplus": -58.9,
+      "zero_spend": 103.33,
+      "negative_units": [
+        {
+          "trade_id": "t23",
+          "tick": 5,
+          "product": "P22",
+          "seller": "ta_seller_p1_2",
+          "unit": 1,
+          "price_cents": 595,
+          "utility_cents": 0,
+          "net_cents": -595,
+          "repeat_unit": true,
+          "trade_already_owned": true,
+          "grade": "high",
+          "via": "board"
+        },
+        {
+          "trade_id": "t35",
+          "tick": 7,
+          "product": "P22",
+          "seller": "ta_seller_p3",
+          "unit": 1,
+          "price_cents": 550,
+          "utility_cents": 0,
+          "net_cents": -550,
+          "repeat_unit": true,
+          "trade_already_owned": true,
+          "grade": "low",
+          "via": "board"
+        },
+        {
+          "trade_id": "t37",
+          "tick": 8,
+          "product": "P21",
+          "seller": "ta_seller_p1",
+          "unit": 1,
+          "price_cents": 590,
+          "utility_cents": 0,
+          "net_cents": -590,
+          "repeat_unit": true,
+          "trade_already_owned": true,
+          "grade": "high",
+          "via": "board"
+        },
+        {
+          "trade_id": "t49",
+          "tick": 10,
+          "product": "P27",
+          "seller": "ta_seller_p3",
+          "unit": 1,
+          "price_cents": 650,
+          "utility_cents": 0,
+          "net_cents": -650,
+          "repeat_unit": true,
+          "trade_already_owned": true,
+          "grade": "low",
+          "via": "board"
+        },
+        {
+          "trade_id": "t52",
+          "tick": 11,
+          "product": "P22",
+          "seller": "ta_seller_p2_2",
+          "unit": 1,
+          "price_cents": 612,
+          "utility_cents": 0,
+          "net_cents": -612,
+          "repeat_unit": true,
+          "trade_already_owned": true,
+          "grade": "high",
+          "via": "board"
+        },
+        {
+          "trade_id": "t80",
+          "tick": 14,
+          "product": "P24",
+          "seller": "ta_seller_p1_2",
+          "unit": 1,
+          "price_cents": 640,
+          "utility_cents": 0,
+          "net_cents": -640,
+          "repeat_unit": true,
+          "trade_already_owned": true,
+          "grade": "high",
+          "via": "board"
+        },
+        {
+          "trade_id": "t94",
+          "tick": 16,
+          "product": "P24",
+          "seller": "ta_seller_p1",
+          "unit": 1,
+          "price_cents": 595,
+          "utility_cents": 0,
+          "net_cents": -595,
+          "repeat_unit": true,
+          "trade_already_owned": true,
+          "grade": "high",
+          "via": "board"
+        },
+        {
+          "trade_id": "t99",
+          "tick": 17,
+          "product": "P24",
+          "seller": "ta_seller_p1",
+          "unit": 1,
+          "price_cents": 595,
+          "utility_cents": 0,
+          "net_cents": -595,
+          "repeat_unit": true,
+          "trade_already_owned": true,
+          "grade": "high",
+          "via": "board"
+        },
+        {
+          "trade_id": "t114",
+          "tick": 20,
+          "product": "P24",
+          "seller": "ta_seller_p3",
+          "unit": 1,
+          "price_cents": 595,
+          "utility_cents": 0,
+          "net_cents": -595,
+          "repeat_unit": true,
+          "trade_already_owned": true,
+          "grade": "high",
+          "via": "board"
+        },
+        {
+          "trade_id": "t118",
+          "tick": 21,
+          "product": "P24",
+          "seller": "ta_seller_p2",
+          "unit": 1,
+          "price_cents": 594,
+          "utility_cents": 0,
+          "net_cents": -594,
+          "repeat_unit": true,
+          "trade_already_owned": true,
+          "grade": "high",
+          "via": "board"
+        },
+        {
+          "trade_id": "t122",
+          "tick": 22,
+          "product": "P24",
+          "seller": "ta_seller_p2",
+          "unit": 1,
+          "price_cents": 594,
+          "utility_cents": 0,
+          "net_cents": -594,
+          "repeat_unit": true,
+          "trade_already_owned": true,
+          "grade": "high",
+          "via": "board"
+        },
+        {
+          "trade_id": "t132",
+          "tick": 23,
+          "product": "P24",
+          "seller": "ta_seller_p2",
+          "unit": 1,
+          "price_cents": 594,
+          "utility_cents": 0,
+          "net_cents": -594,
+          "repeat_unit": true,
+          "trade_already_owned": true,
+          "grade": "high",
+          "via": "board"
+        },
+        {
+          "trade_id": "t138",
+          "tick": 24,
+          "product": "P21",
+          "seller": "ta_seller_p2",
+          "unit": 1,
+          "price_cents": 600,
+          "utility_cents": 0,
+          "net_cents": -600,
+          "repeat_unit": true,
+          "trade_already_owned": true,
+          "grade": "high",
+          "via": "board"
+        },
+        {
+          "trade_id": "t146",
+          "tick": 25,
+          "product": "P24",
+          "seller": "ta_seller_p3",
+          "unit": 1,
+          "price_cents": 595,
+          "utility_cents": 0,
+          "net_cents": -595,
+          "repeat_unit": true,
+          "trade_already_owned": true,
+          "grade": "high",
+          "via": "board"
+        },
+        {
+          "trade_id": "t152",
+          "tick": 27,
+          "product": "P24",
+          "seller": "ta_seller_p2_2",
+          "unit": 1,
+          "price_cents": 667,
+          "utility_cents": 0,
+          "net_cents": -667,
+          "repeat_unit": true,
+          "trade_already_owned": true,
+          "grade": "high",
+          "via": "board"
+        },
+        {
+          "trade_id": "t156",
+          "tick": 28,
+          "product": "P24",
+          "seller": "ta_seller_p2_2",
+          "unit": 1,
+          "price_cents": 667,
+          "utility_cents": 0,
+          "net_cents": -667,
+          "repeat_unit": true,
+          "trade_already_owned": true,
+          "grade": "high",
+          "via": "board"
+        },
+        {
+          "trade_id": "t161",
+          "tick": 30,
+          "product": "P21",
+          "seller": "ta_seller_p2",
+          "unit": 1,
+          "price_cents": 600,
+          "utility_cents": 0,
+          "net_cents": -600,
+          "repeat_unit": true,
+          "trade_already_owned": true,
+          "grade": "high",
+          "via": "board"
+        }
+      ]
+    }
+  ],
+  "seller_v1_verified": true,
+  "seller_v1": {
+    "example_student_seller_p1": {
+      "profit_cents": 17527,
+      "revenue_cents": 46627,
+      "cost_cents": 29100,
+      "units_sold": 23,
+      "units_unsold": 24,
+      "sales_to_students": 0,
+      "sales_price_to_list_ratio": 0.9713351248880279,
+      "low_grade_units": 0,
+      "low_grade_cost_saving_cents": 0,
+      "by_product": {
+        "P71": {
+          "units": 1,
+          "revenue_cents": 2201,
+          "profit_cents": 1,
+          "list_price_cents": 3600,
+          "low_units": 0
+        },
+        "P67": {
+          "units": 3,
+          "revenue_cents": 9286,
+          "profit_cents": 2986,
+          "list_price_cents": 3095,
+          "low_units": 0
+        },
+        "P55": {
+          "units": 3,
+          "revenue_cents": 6753,
+          "profit_cents": 2853,
+          "list_price_cents": 2250,
+          "low_units": 0
+        },
+        "P47": {
+          "units": 1,
+          "revenue_cents": 1575,
+          "profit_cents": 675,
+          "list_price_cents": 1574,
+          "low_units": 0
+        },
+        "P60": {
+          "units": 3,
+          "revenue_cents": 8001,
+          "profit_cents": 3201,
+          "list_price_cents": 2666,
+          "low_units": 0
+        },
+        "P63": {
+          "units": 1,
+          "revenue_cents": 2701,
+          "profit_cents": 901,
+          "list_price_cents": 2700,
+          "low_units": 0
+        },
+        "P65": {
+          "units": 2,
+          "revenue_cents": 5602,
+          "profit_cents": 2602,
+          "list_price_cents": 2800,
+          "low_units": 0
+        },
+        "P30": {
+          "units": 3,
+          "revenue_cents": 2700,
+          "profit_cents": 1200,
+          "list_price_cents": 898,
+          "low_units": 0
+        },
+        "P68": {
+          "units": 1,
+          "revenue_cents": 3151,
+          "profit_cents": 1151,
+          "list_price_cents": 3150,
+          "low_units": 0
+        },
+        "P40": {
+          "units": 3,
+          "revenue_cents": 3231,
+          "profit_cents": 1431,
+          "list_price_cents": 1076,
+          "low_units": 0
+        },
+        "P27": {
+          "units": 1,
+          "revenue_cents": 758,
+          "profit_cents": 258,
+          "list_price_cents": 757,
+          "low_units": 0
+        },
+        "P24": {
+          "units": 1,
+          "revenue_cents": 668,
+          "profit_cents": 268,
+          "list_price_cents": 667,
+          "low_units": 0
+        }
+      },
+      "actions": {
+        "set_price": 23,
+        "wait": 7
+      },
+      "errors": {},
+      "below_or_at_cost_quotes": 0,
+      "truncated_turns": 0,
+      "budget_waits": 0,
+      "output_tokens": 17123,
+      "problems": []
+    },
+    "example_student_seller_p2": {
+      "profit_cents": 23821,
+      "revenue_cents": 60621,
+      "cost_cents": 36800,
+      "units_sold": 33,
+      "units_unsold": 17,
+      "sales_to_students": 0,
+      "sales_price_to_list_ratio": 1.0,
+      "low_grade_units": 0,
+      "low_grade_cost_saving_cents": 0,
+      "by_product": {
+        "P22": {
+          "units": 2,
+          "revenue_cents": 1224,
+          "profit_cents": 424,
+          "list_price_cents": 612,
+          "low_units": 0
+        },
+        "P27": {
+          "units": 2,
+          "revenue_cents": 1514,
+          "profit_cents": 514,
+          "list_price_cents": 757,
+          "low_units": 0
+        },
+        "P30": {
+          "units": 3,
+          "revenue_cents": 2694,
+          "profit_cents": 1194,
+          "list_price_cents": 898,
+          "low_units": 0
+        },
+        "P06": {
+          "units": 1,
+          "revenue_cents": 197,
+          "profit_cents": 97,
+          "list_price_cents": 197,
+          "low_units": 0
+        },
+        "P47": {
+          "units": 2,
+          "revenue_cents": 3148,
+          "profit_cents": 1348,
+          "list_price_cents": 1574,
+          "low_units": 0
+        },
+        "P56": {
+          "units": 3,
+          "revenue_cents": 6885,
+          "profit_cents": 2985,
+          "list_price_cents": 2295,
+          "low_units": 0
+        },
+        "P60": {
+          "units": 4,
+          "revenue_cents": 10664,
+          "profit_cents": 4264,
+          "list_price_cents": 2666,
+          "low_units": 0
+        },
+        "P63": {
+          "units": 1,
+          "revenue_cents": 2700,
+          "profit_cents": 900,
+          "list_price_cents": 2700,
+          "low_units": 0
+        },
+        "P65": {
+          "units": 2,
+          "revenue_cents": 5600,
+          "profit_cents": 2600,
+          "list_price_cents": 2800,
+          "low_units": 0
+        },
+        "P71": {
+          "units": 2,
+          "revenue_cents": 7200,
+          "profit_cents": 2800,
+          "list_price_cents": 3600,
+          "low_units": 0
+        },
+        "P68": {
+          "units": 1,
+          "revenue_cents": 3150,
+          "profit_cents": 1150,
+          "list_price_cents": 3150,
+          "low_units": 0
+        },
+        "P40": {
+          "units": 3,
+          "revenue_cents": 3228,
+          "profit_cents": 1428,
+          "list_price_cents": 1076,
+          "low_units": 0
+        },
+        "P31": {
+          "units": 2,
+          "revenue_cents": 1798,
+          "profit_cents": 598,
+          "list_price_cents": 899,
+          "low_units": 0
+        },
+        "P24": {
+          "units": 2,
+          "revenue_cents": 1334,
+          "profit_cents": 534,
+          "list_price_cents": 667,
+          "low_units": 0
+        },
+        "P67": {
+          "units": 3,
+          "revenue_cents": 9285,
+          "profit_cents": 2985,
+          "list_price_cents": 3095,
+          "low_units": 0
+        }
+      },
+      "actions": {
+        "set_price": 28,
+        "send_message": 1,
+        "wait": 1
+      },
+      "errors": {},
+      "below_or_at_cost_quotes": 0,
+      "truncated_turns": 0,
+      "budget_waits": 0,
+      "output_tokens": 13591,
+      "problems": []
+    },
+    "example_student_seller_p3": {
+      "profit_cents": 17100,
+      "revenue_cents": 52000,
+      "cost_cents": 34900,
+      "units_sold": 26,
+      "units_unsold": 23,
+      "sales_to_students": 0,
+      "sales_price_to_list_ratio": 0.9157347891168442,
+      "low_grade_units": 0,
+      "low_grade_cost_saving_cents": 0,
+      "by_product": {
+        "P63": {
+          "units": 2,
+          "revenue_cents": 4800,
+          "profit_cents": 1200,
+          "list_price_cents": 2700,
+          "low_units": 0
+        },
+        "P67": {
+          "units": 3,
+          "revenue_cents": 8400,
+          "profit_cents": 2100,
+          "list_price_cents": 3095,
+          "low_units": 0
+        },
+        "P56": {
+          "units": 3,
+          "revenue_cents": 6400,
+          "profit_cents": 2500,
+          "list_price_cents": 2295,
+          "low_units": 0
+        },
+        "P48": {
+          "units": 6,
+          "revenue_cents": 9400,
+          "profit_cents": 2800,
+          "list_price_cents": 1695,
+          "low_units": 0
+        },
+        "P47": {
+          "units": 1,
+          "revenue_cents": 1400,
+          "profit_cents": 500,
+          "list_price_cents": 1574,
+          "low_units": 0
+        },
+        "P19": {
+          "units": 1,
+          "revenue_cents": 500,
+          "profit_cents": 100,
+          "list_price_cents": 569,
+          "low_units": 0
+        },
+        "P21": {
+          "units": 1,
+          "revenue_cents": 500,
+          "profit_cents": 100,
+          "list_price_cents": 600,
+          "low_units": 0
+        },
+        "P40": {
+          "units": 1,
+          "revenue_cents": 1000,
+          "profit_cents": 400,
+          "list_price_cents": 1076,
+          "low_units": 0
+        },
+        "P28": {
+          "units": 1,
+          "revenue_cents": 700,
+          "profit_cents": 200,
+          "list_price_cents": 785,
+          "low_units": 0
+        },
+        "P68": {
+          "units": 1,
+          "revenue_cents": 2600,
+          "profit_cents": 600,
+          "list_price_cents": 3150,
+          "low_units": 0
+        },
+        "P62": {
+          "units": 3,
+          "revenue_cents": 7500,
+          "profit_cents": 3000,
+          "list_price_cents": 2697,
+          "low_units": 0
+        },
+        "P65": {
+          "units": 2,
+          "revenue_cents": 5300,
+          "profit_cents": 2300,
+          "list_price_cents": 2800,
+          "low_units": 0
+        },
+        "P71": {
+          "units": 1,
+          "revenue_cents": 3500,
+          "profit_cents": 1300,
+          "list_price_cents": 3600,
+          "low_units": 0
+        }
+      },
+      "actions": {
+        "make_offer": 30
+      },
+      "errors": {},
+      "below_or_at_cost_quotes": 0,
+      "truncated_turns": 0,
+      "budget_waits": 0,
+      "output_tokens": 21368,
+      "problems": []
+    }
+  },
+  "seller_v2_started_actions": 0,
+  "seller_v2_failure": "vLLM startup free VRAM less than selected utilization; queue did not yet recognize that startup-stage resource race",
+  "automatic_gpu_work": false,
+  "automatic_training": false
+}

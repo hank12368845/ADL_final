@@ -1,0 +1,59 @@
+{
+  "status": "CPU verified; real-model GPU work remains user-run",
+  "tests": {
+    "passed": 47,
+    "log": "/tmp/adl_id_repair_tests.log"
+  },
+  "data_manifest_sha256": "21aedd20aa97ef6a6ccc8464491f2a74a3e62189fde20d8558502f41b5bb6c08",
+  "train_rows": 256,
+  "validation_rows": 384,
+  "actions": {
+    "buy_listed": 128,
+    "wait": 96,
+    "accept_offer": 32
+  },
+  "histories": {
+    "fresh": 128,
+    "recorded": 128
+  },
+  "personas": {
+    "1": 80,
+    "2": 104,
+    "3": 72
+  },
+  "board_engine_checked": 192,
+  "positive_realized_surplus_checked": 128,
+  "wrong_seller_rejected": 192,
+  "notice_id_as_offer_rejected": 192,
+  "unique_input_messages": 248,
+  "same_history_current_seller_counterfactuals": 96,
+  "historical_and_other_current_sellers": {
+    "True": 96,
+    "False": 96
+  },
+  "warm_start": {
+    "parent_step": 32,
+    "local_start_step": 0,
+    "optimizer": "new AdamW",
+    "scheduler": "new warmup/cosine",
+    "note": "Adapter warm start; not optimizer resume. Local step16/32 are additional updates."
+  },
+  "parent_fingerprints": {
+    "adapter_config.json": "3f76526075f53749c5ecb75b2b77b4c83f1727a7c3862523586c21145411a080",
+    "adapter_model.safetensors": "47c421cb0bc68e3ead0336d3c1404c43094ebfe31d9af56e3c1daa994879e037"
+  },
+  "planned_samples_by_rank": {
+    "0": 128,
+    "1": 128
+  },
+  "holdout_and_probe_copied_unchanged": true,
+  "source_sha256": {
+    "training/id_repair_data.py": "50c66b2993e354cb4c9560cde45fa2ea0569f336bbd20e4f46557cb5dfd981ea",
+    "training/test_id_repair.py": "97b506681112f707813697d0ff61f7b19c4b30ffa5ae5fdf00e2eab77ef88099",
+    "training/configs/buyer_id_repair_v1.yaml": "02f54124406d3c7977ed4fb3f37e06d9934111b2abf53676bde218baa5077fb9",
+    "training/buyer_operations_train.py": "b2032a8e20d6f7e00af2bb9ad0254e6d3c6503455e0fd174ea2e4a0695e9ecce",
+    "training/evaluate_board_repair.py": "9ad4608b7c6e811200a6f68313a033c22867fe48eb29d3f3b2c9671991d55a74",
+    "training/board_repair_setup.py": "75b4c9b71ed1512f5aea55713886d4b2ce84d7a5ca85bdadb7cb11b6bbb1932e",
+    "training/board_repair_sampling.py": "41db9fb9dc7071edf4a1c12d6dfe6357a50a4294ac0defc169fe9023b6acd262"
+  }
+}

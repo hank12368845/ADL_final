@@ -1,0 +1,31 @@
+{
+  "cpu_only": true,
+  "gpu_training_or_model_inference_started": false,
+  "manifest_sha256": "d3e3a3300d77246d6ec7a4252d63651b25f1c0a089397a1ed547180c40b75f5e",
+  "tests": {
+    "command": "/home/hank/.cache/adl_final_venv/bin/python -m unittest training.test_buyer_dollar_lines -v",
+    "passed": 7,
+    "failed": 0,
+    "elapsed_seconds": 11.786,
+    "scope": "CPU data/template/parser, exact dollar scoring, gold tool/state agreement, segmented loss/gradient on tiny CPU logits, step6 gates, mocked two-GPU launcher"
+  },
+  "source_sha256": {
+    "training/buyer_dollar_lines.py": "6c18870c2e5bd0100f17b2e12f8d2ca8e8ac3ce3e80e124b4eec51ba9090cbf2",
+    "training/buyer_dollar_data.py": "d4a0a7aa5b6be3c830b2cd2e22619f22594f5638b58fbc82a6fb34a6b9626601",
+    "training/buyer_dollar_train.py": "bed4407b096d6711d8a8b90329e3526b60aa817f85563e8a5c9410fe2a07aa4a",
+    "training/train_buyer_dollar_lines.py": "c47e3bdd681f96041d6cc341b93caee4fd4cce3c3ff6190295af776574ca7491",
+    "training/test_buyer_dollar_lines.py": "58100ad90cc99eaaf930b385d8425f09a761815540b66ba295a5b772480cefc5"
+  },
+  "train_unique_inputs": 48,
+  "step6_exposures": 48,
+  "max_exposures": 96,
+  "step6_new_gpu_calls": 12,
+  "step12_additional_gpu_calls_if_gate_passes": 73,
+  "baseline73": "CPU-rescored cached original step84 generations",
+  "max_check_tokens": 57,
+  "free_gib": {
+    "/mnt/data1/hank/ADL/2026-ADL-Final-Release": 101.59,
+    "/tmp": 81.1
+  },
+  "limits": "No evidence yet of actual GPU memory behavior, dollar-line learning, step6 success, or market surplus."
+}

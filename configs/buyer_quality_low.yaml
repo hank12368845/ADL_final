@@ -1,0 +1,17 @@
+name: buyer_quality_low
+seed: 0
+models: configs/models.yaml
+sellers:
+  - {agent: agents/_ta/seller, personas: [persona_1.md, persona_2.md]}
+  - training/fixtures/quality_low.yaml
+buyers: [agents/example_student/buyer]
+personas_per_student: 3
+repeats: 1
+rotate: false
+save_trajectories: true
+save_prompts: true
+market:
+  catalog: scenarios/public/catalog.yaml
+  rounds: {total: 5, turns_per_round: 6, output_tokens_per_round: 8192}
+  schema: {items: scenarios/public/items_example.json, budget_extra: 0.15}
+  channels: {board: true, dm: true, seller_room: false, buyer_room: true}

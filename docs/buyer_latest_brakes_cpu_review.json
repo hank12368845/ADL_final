@@ -1,0 +1,119 @@
+{
+  "date": "2026-11-20",
+  "experiment": "buyer_latest_brakes_v1",
+  "gpu_training_or_model_inference_started": false,
+  "raw_audit": "results/basic_checks/20261120-020252_step84_repair_ewp82xy6/known5_cash_persona_audit.md",
+  "known_failed": {
+    "unaffordable": 4,
+    "thinking_truncated_no_tool": 1,
+    "duplicate_purchase": 0
+  },
+  "cash_error_personas": {
+    "p1": 3,
+    "p2": 2,
+    "p3": 0
+  },
+  "cpu_tests_passed": 8,
+  "cpu_test_seconds": 40.498,
+  "cpu_test_log": "/tmp/adl_latest_brakes_tests.log",
+  "training_recipe": {
+    "experiment": "buyer_latest_brakes_v1",
+    "data_dir": "training/data/buyer_latest_brakes_v1",
+    "thinking": true,
+    "learning_rate": 5e-06,
+    "warmup_steps": 3,
+    "max_steps": 36,
+    "checkpoint_steps": [
+      12,
+      24,
+      36
+    ],
+    "effective_batch_size": 8,
+    "max_length": 12288,
+    "seed": 20261121,
+    "base_model": "Qwen/Qwen3.5-4B",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "rank": 16,
+    "alpha": 32,
+    "dropout": 0.0,
+    "target_modules": "model\\.layers\\.\\d+\\.(self_attn\\.(q_proj|k_proj|v_proj|o_proj)|linear_attn\\.(in_proj_qkv|in_proj_z|in_proj_b|in_proj_a|out_proj)|mlp\\.(gate_proj|up_proj|down_proj))",
+    "parent_adapter": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/training/runs/20261119-213016_buyer_official_u3csnqyh/checkpoints/step_0084",
+    "parent_fingerprints": {
+      "adapter_config.json": "3f76526075f53749c5ecb75b2b77b4c83f1727a7c3862523586c21145411a080",
+      "adapter_model.safetensors": "bf58858cfbdc18de7ac62f7fb3a29bcb243fe9bb92417fdde77997317d45005c"
+    },
+    "data_manifest_sha256": "19578a58f13611865ab385b5df2c61c9747d9f5af1141028e57c5c059242068e",
+    "training_sources": {
+      "training/train_buyer_latest_brakes.py": "2767ada5316a120d428243f39e8955d17303fe4bc6eb8341f01c0596cc43e7fa",
+      "training/buyer_latest_brakes_train.py": "4ed5046cc9753181609bc0f5607193afc8906bbaa95cff7a9cbb5e970bc34c08",
+      "training/buyer_latest_brakes_data.py": "09d932e81c1760567ce09fa9b637f3ec5548d8db66df5f3c2237f6bf0b13f64f",
+      "training/buyer_operations_train.py": "f053e67c3b90a5410e0fdf38d0916a256a2f0c728e9e5309840363089c34276a",
+      "training/official_buyer_train.py": "60551847800d6ef90231144d30dfd88b5c3f32f59157e49422d1365d59b90d7f",
+      "training/official_buyer_data.py": "5c632b403a874c7410e4176a8e40828a224700d5e7deb858b4f9fed262fcd454",
+      "training/step84_repair_plan.py": "1f2d465fec271c30331ace83c63f1bc32cb02959b00408793bc752e96d5c457f",
+      "training/buyer_hf_check.py": "1938af9ad5c12f6db58e6a8833f3d878a1d51a9ce67b45153bca430fbf2e6593",
+      "training/reasoning_checkpoint.py": "cde21ba845780b331983199e2ac10ea2f5344e4071cc4e4da10e6380ce8ed860"
+    },
+    "objective": "Native assistant completion CE only, no auxiliary decision weighting",
+    "world_size": 2,
+    "versions": {
+      "torch": "2.11.0",
+      "transformers": "5.22.1",
+      "peft": "0.21.2",
+      "accelerate": "1.15.0",
+      "safetensors": "0.8.0",
+      "vllm": "0.25.1"
+    }
+  },
+  "data": {
+    "train_examples": 288,
+    "validation_examples": 24,
+    "sources": {
+      "official_rehearsal": 144,
+      "official_world_engine_counterfactual": 144
+    },
+    "actions": {
+      "buy_listed": 108,
+      "accept_offer": 108,
+      "wait": 72
+    },
+    "groups_train": 35,
+    "groups_validation": 6,
+    "mean_tokens": 8564.420138888889,
+    "max_tokens": 12282,
+    "max_target_tokens": 266,
+    "persona_chars": [
+      6403,
+      7600,
+      7031
+    ]
+  },
+  "evaluation": {
+    "cases_per_checkpoint": 67,
+    "cases_per_rank": {
+      "0": 33,
+      "1": 34
+    },
+    "cached_parent_cases": 37,
+    "fresh_parent_calls": 30,
+    "planned_new_native_calls": 231,
+    "seen_by_local_step": 12
+  },
+  "checks": [
+    "Latest persona equality in every input",
+    "Cash/owned counterfactual target proof with original engine",
+    "First12 already cover zero and one-cent cash boundaries for p1/p2",
+    "Every batch has 3 buy, 3 accept and 2 wait; full epoch coverage",
+    "Current held state precedes one p3 quality estimate; reasons <=160 tokens",
+    "All312 native tool completions parse and prompt/history loss boundary matches",
+    "Official train replay and repair-validation source groups disjoint; no failed development questions in training",
+    "Retain known/fresh recall separately, no reward for all-wait collapse",
+    "CPU-only entry and fake two-rank launcher; exact-resume source/optimizer/RNG guards"
+  ],
+  "limits": [
+    "CPU verifies data and pipeline, not model improvement or GPU memory peak.",
+    "Small corrective experiment; official rehearsal retains older source-world facts.",
+    "Greedy snapshot behavior is not market surplus or course grade.",
+    "No automatic promotion or market run; actual GPU job remains user-launched."
+  ]
+}

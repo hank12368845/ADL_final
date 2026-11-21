@@ -1,0 +1,21 @@
+# Decision-learning probe. Starts from base; never warm-start from the collapsed adapter.
+base_model: Qwen/Qwen3.5-4B
+revision: 851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a
+data_version: buyer_operations_v2
+data_dir: training/data/buyer_operations_v2
+sampling: paired_4_2_2
+decision_weight: 1.0
+rank: 16
+alpha: 32
+dropout: 0.0
+learning_rate: 1.0e-05
+weight_decay: 0.01
+max_steps: 16
+effective_batch_size: 8
+warmup_steps: 2
+eval_every: 4
+validation_max: 16
+seed: 20261119
+max_length: 12288
+gradient_checkpointing: true
+target_modules: model\.layers\.\d+\.(self_attn\.(q_proj|k_proj|v_proj|o_proj)|linear_attn\.(in_proj_qkv|in_proj_z|in_proj_b|in_proj_a|out_proj)|mlp\.(gate_proj|up_proj|down_proj))

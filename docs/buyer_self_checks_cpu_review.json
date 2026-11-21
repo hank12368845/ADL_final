@@ -1,0 +1,38 @@
+{
+  "experiment": "buyer_self_checks_v1",
+  "cpu_only": true,
+  "gpu_training_or_model_inference_started": false,
+  "checks": {
+    "source_persona_and_data_hashes": true,
+    "python_ast": true,
+    "unit_tests": {
+      "command": "/home/hank/.cache/adl_final_venv/bin/python -m unittest training.test_buyer_self_checks -v",
+      "passed": 10,
+      "failed": 0,
+      "elapsed_seconds": 18.627,
+      "scope": "CPU labels, engine proofs, native template/parser, token loss/gradients on tiny CPU logits, scoring/recall gates and mocked two-GPU launcher; not actual HF training"
+    }
+  },
+  "manifest_sha256": "dc66631fa3c65dc3822f684404489c40638324ffdf7a36fa5dd1c7e1fe251586",
+  "sources": {
+    "training/buyer_self_checks.py": "d73dc68d297644e1146c6b91cd107261910798233fc06ad4a1a9cbd29af287c0",
+    "training/buyer_self_checks_data.py": "ef72e76fdd0d318cf09c8aea79cf3b46f649102f06a6181626c02ee3b6f469cd",
+    "training/buyer_self_checks_train.py": "984f5deb55badc388d3e80cf1889f3c744ed609b319efc7c4ad478175a2f40bc",
+    "training/train_buyer_self_checks.py": "e28bfcc2cec5c9ec9be41d43e5fa3c0f851d22f9d0d11035a8dfa821b7f542ee",
+    "training/test_buyer_self_checks.py": "1758cde2b8f3abedba2ac34039d52c1dfcc1173a4f89a6a13bf8c062cdda2d4e"
+  },
+  "training_cases": 48,
+  "training_exposures": 96,
+  "training_steps": 12,
+  "new_gpu_generation_calls_planned": 182,
+  "personas_chars": {
+    "1": 6403,
+    "2": 7600,
+    "3": 7031
+  },
+  "free_gib": {
+    "/mnt/data1/hank/ADL/2026-ADL-Final-Release": 102.34,
+    "/tmp": 80.76
+  },
+  "limits": "This evidence verifies CPU preparation only, not model learning, operation improvement, ETA accuracy or market score."
+}

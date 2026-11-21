@@ -1,0 +1,9 @@
+{
+  "description": "Original active seller settings before checkpoint1 persona v1; not trained weights",
+  "files": {
+    "agent.yaml": "87701a45ec41659a602910bd9c34d63821c7c327dbb835ce35984236a48baef7",
+    "persona_2.md": "857ee1beaf30d8f9b2fc0dbcc50c96cf8df46347d2457bb8b137537c7a4f68fe",
+    "persona_1.md": "46c7a2d1f1eddc0e1661a347b67b20863a377294de6dd10828b4fc1d7e8cdfd8",
+    "persona_3.md": "7170417a063a7c90585b96eec3d1a1d635ef78556ea01938b1e5ccb43aac76d0"
+  }
+}

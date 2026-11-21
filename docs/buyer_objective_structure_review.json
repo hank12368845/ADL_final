@@ -1,0 +1,30 @@
+{
+  "buyer_reasoning_v1": {
+    "rows": 3072,
+    "max_candidates": 1,
+    "has_tool_answer_in_gold_reasoning": 2880,
+    "reasoning_tokens": 245320,
+    "assistant_target_tokens": 436724
+  },
+  "buyer_board_repair_v1": {
+    "rows": 256,
+    "max_candidates": 1,
+    "has_tool_answer_in_gold_reasoning": 256,
+    "reasoning_tokens": 24376,
+    "assistant_target_tokens": 44066
+  },
+  "buyer_id_repair_v1": {
+    "rows": 256,
+    "max_candidates": 1,
+    "has_tool_answer_in_gold_reasoning": 256,
+    "reasoning_tokens": 27793,
+    "assistant_target_tokens": 47553
+  },
+  "buyer_symmetric_repair_v1": {
+    "rows": 256,
+    "max_candidates": 1,
+    "has_tool_answer_in_gold_reasoning": 256,
+    "reasoning_tokens": 25482,
+    "assistant_target_tokens": 41458
+  }
+}

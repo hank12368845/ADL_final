@@ -1,0 +1,59 @@
+{
+  "date": "2026-11-20",
+  "gpu_work_started": false,
+  "model_improvement_verified": false,
+  "cpu_tests_passed": 7,
+  "test_log": "/tmp/adl_surgical_cpu_release.log",
+  "data_dir": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/training/data/buyer_surgical_v1",
+  "data_manifest_sha256": "fea2dfdd97e121a0b0af1f71c76d039cb8099827e450d3f2666c03a029ce2770",
+  "unique_replay": 43,
+  "unique_repairs": 24,
+  "replay_exposures": 56,
+  "repair_exposures": 24,
+  "training_steps_planned": 20,
+  "gpu_launcher_implemented": true,
+  "persona_exposures": {
+    "1": 24,
+    "2": 30,
+    "3": 26
+  },
+  "control_board_max": 29,
+  "max_input_target_tokens": 24432,
+  "sources_sha256": {
+    "training/prepare_buyer_surgical.py": "214e0c60ff0463c286dd2da0b5d710c4b87c43ac96041e49d17c7e4d8da3e857",
+    "training/test_buyer_surgical.py": "b3bf0dee6084c7551f7206176390357ca1e8ac11d8424935881553305306c3c0"
+  },
+  "limits": [
+    "70/30 is sample exposure, not token share.",
+    "Only one real source market; no successful offer replay.",
+    "Previous six real market probes are now training-market seen, not held-out.",
+    "Twenty steps and causal claims about prior regressions are hypotheses, not guarantees."
+  ],
+  "launcher_tests_passed": 8,
+  "launcher_test_log": "/tmp/adl_surgical_oom_fix_release.log",
+  "planned_model_decisions": 306,
+  "planned_steps": 20,
+  "planned_checkpoints": [
+    10,
+    20
+  ],
+  "activation_offload_from_tokens": 16000,
+  "launcher_sources_sha256": {
+    "training/train_buyer_surgical.py": "5e91591ba330e1966d792111aca04150daabe2084ad4569a0c61d93914688957",
+    "training/buyer_surgical_train.py": "830c4556fa476116cad6f87b48578bbeedc76b96cb6ba5b5780047e66edaa946",
+    "training/buyer_surgical_eval.py": "f0a3796d1b8a7e43489ec2c6d37f1eb2ca272bd8a348b80d75547445fa324904",
+    "training/test_buyer_surgical_runner.py": "e22febabe4f6e30834d8844a77f0fa6c7cb72cbc169b29f19af014885b97efb7"
+  },
+  "mlp_chunk_tokens": 2048,
+  "oom_root": "Both ranks failed24K backward in Qwen3.5 MLP PEFT fp32 input cast before any optimizer step.",
+  "oom_failed_run": "training/runs/20261120-202539_buyer_surgical_om5lmi7k",
+  "memory_fix": "Tokenwise2048 MLP chunks with nested non-reentrant checkpoint; allocator override training-only; full attention/data/LoRA dtype unchanged.",
+  "mixed_precision_cpu_gradient_check_passed": true,
+  "cuda_memory_fix_verified": true,
+  "cuda_validation_run": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/training/runs/20261120-203130_buyer_surgical_3hb_nseg",
+  "cuda_validation_note": "User completed20steps/306evaluations without OOM; this review only read CPU artifacts.",
+  "cuda_peak_gpu_gib": {
+    "0": 20.57940149307251,
+    "1": 20.212727546691895
+  }
+}

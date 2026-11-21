@@ -1,0 +1,97 @@
+{
+  "date": "2026-11-18T19:41:22.202138+08:00",
+  "reason": "User requested removal of obsolete interrupted training data after switching to the short evidence probe.",
+  "deleted": [
+    {
+      "path": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/training/runs/20261118-192350_buyer_operations_a7le1s74",
+      "bytes": 16734,
+      "files": 6
+    },
+    {
+      "path": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/training/data/buyer_operations_v1_initial_cpu_preview",
+      "bytes": 164131187,
+      "files": 11
+    },
+    {
+      "path": "/tmp/adl_buyer_operations_cpu_preview_v1",
+      "bytes": 19784730,
+      "files": 11
+    },
+    {
+      "path": "/tmp/adl_buyer_operations_prepare.log",
+      "bytes": 38861,
+      "files": 1
+    }
+  ],
+  "retained_active_run": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/training/runs/20261118-193743_buyer_operations_6yy413cv",
+  "retained_dataset": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/training/data/buyer_operations_v1",
+  "retained_manifest_sha256": "1e6badc9b5559823a359a04dbdc933867b091c85bde2a8e84e003fddb80b48c9",
+  "old_training_summary": {
+    "config": {
+      "base_model": "Qwen/Qwen3.5-4B",
+      "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+      "data_dir": "training/data/buyer_operations_v1",
+      "rank": 16,
+      "alpha": 32,
+      "dropout": 0.0,
+      "learning_rate": 5e-05,
+      "weight_decay": 0.01,
+      "max_steps": 80,
+      "effective_batch_size": 8,
+      "warmup_steps": 8,
+      "eval_every": 40,
+      "validation_max": 60,
+      "seed": 20261118,
+      "max_length": 12288,
+      "gradient_checkpointing": true,
+      "target_modules": "model\\.layers\\.\\d+\\.(self_attn\\.(q_proj|k_proj|v_proj|o_proj)|linear_attn\\.(in_proj_qkv|in_proj_z|in_proj_b|in_proj_a|out_proj)|mlp\\.(gate_proj|up_proj|down_proj))",
+      "devices": [
+        {
+          "index": "0",
+          "uuid": "GPU-ae58b1f2-0875-0e46-0dd2-4f001744aaa9",
+          "total_gib": 23.98828125,
+          "free_gib": 23.5048828125,
+          "fraction": 0.896,
+          "budget_gib": 21.4935
+        },
+        {
+          "index": "1",
+          "uuid": "GPU-cec878bc-bdd9-8622-91bb-8ae2d1bc9495",
+          "total_gib": 23.98828125,
+          "free_gib": 23.5048828125,
+          "fraction": 0.896,
+          "budget_gib": 21.4935
+        }
+      ],
+      "world_size": 2,
+      "versions": {
+        "torch": "2.11.0",
+        "transformers": "5.22.1",
+        "peft": "0.21.2",
+        "accelerate": "1.15.0",
+        "safetensors": "0.8.0"
+      }
+    },
+    "last_metric": {
+      "stage": "train",
+      "step": 10,
+      "loss": 0.04332493990659714,
+      "lr": 4.990486745229364e-05,
+      "elapsed_seconds": 674.2130310649518,
+      "examples": 80,
+      "peak_gpu_gib": 16.503668785095215
+    },
+    "validation": [
+      {
+        "stage": "validation",
+        "step": 0,
+        "completion_loss": 0.08693475333711831,
+        "examples": 60
+      }
+    ],
+    "saved_checkpoint_count": 0,
+    "process_check": "External process listing confirmed only the new 8-step session remained; no old-session workers."
+  },
+  "deleted_bytes": 183971512,
+  "deleted_mib": 175.45
+}

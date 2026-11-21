@@ -7,6 +7,8 @@ __pycache__/
 /.cache/
 /logs/
 /handin/
+/training/data/
+/training/runs/
 
 # LoRA weights are large and handed in through the zip, so git does not track them here.
 # Delete these lines if you want git to track your own checkpoint/ folders.

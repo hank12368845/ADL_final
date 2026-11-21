@@ -1,0 +1,11 @@
+{
+  "cpu_only": true,
+  "gpu_started": false,
+  "tests_passed": 4,
+  "test_log": "/tmp/adl_seller_persona_cpu_tests.log",
+  "mock_actions": 900,
+  "real_model_scores": false,
+  "buyer_personas_unchanged": true,
+  "seller_adapter_unchanged": true,
+  "source_sha256": "d2077febf3bd3c68afb48099956ed6efa06e8963d7e038e9bf439758300dfc1e"
+}

@@ -1,0 +1,10 @@
+experiment: buyer_latest_brakes_v1
+data_dir: training/data/buyer_latest_brakes_v1
+thinking: true
+learning_rate: 5.0e-06
+warmup_steps: 3
+max_steps: 36
+checkpoint_steps: [12, 24, 36]
+effective_batch_size: 8
+max_length: 12288
+seed: 20261121

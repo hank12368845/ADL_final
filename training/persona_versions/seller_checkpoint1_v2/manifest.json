@@ -1,0 +1,33 @@
+{
+  "version": "seller_checkpoint1_v2",
+  "role": "seller",
+  "thinking": true,
+  "prior_version": "training/persona_versions/seller_checkpoint1_v1",
+  "files": {
+    "agent.yaml": {
+      "sha256": "264cbd9ea0d6dbf00efa451213820c86d42c50859e47171360dca7a55b3aa534",
+      "chars": 589
+    },
+    "persona_1.md": {
+      "sha256": "251a47315c2799962b8f8d6a942660eea4a138aa12a123bc5e066e83eb71d20f",
+      "chars": 3422
+    },
+    "persona_2.md": {
+      "sha256": "d3623e14cb6851fab9f2cae1652d48ab0017bf144cea9cb3fddb152648a00996",
+      "chars": 3406
+    },
+    "persona_3.md": {
+      "sha256": "5abc05a433bfc2385ffa409ea1777e0c2c22bdbb206c6af4b5592840e084ac26",
+      "chars": 3936
+    }
+  },
+  "checkpoint_is_starter": true,
+  "training_done": false,
+  "gpu_work": false,
+  "role_format_errors": [],
+  "strategy_status": "Experimental; no measured v2 profit yet. Compare v1/v2 with the same base and market.",
+  "baseline_adapter_fingerprints": {
+    "adapter_config.json": "34f1a56820d930389ddc9230bedd555e61d1b18a76cc2a6e378f78fc54b831c2",
+    "adapter_model.safetensors": "be7b27586f5904fedc6ad70c511e4e5240a55f74a4ef612defa86d1fd6f3fbfd"
+  }
+}

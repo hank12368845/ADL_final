@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-20",
+  "scope": "CPU only: exact config/persona/adapter preflight, dual-route preparation, per-unit accounting and actual original-engine mock 450 actions. No GPU model execution.",
+  "tests": {
+    "initial_full_suite": "6 tests passed in 19.941s",
+    "accounting_report_extension": "2 targeted tests passed in 6.361s",
+    "stock_classifier_and_final_mock": "2 targeted tests passed in 6.354s",
+    "unique_tests_executed": 7
+  },
+  "gpu_jobs_started": 0,
+  "training_updates": 0,
+  "formal_market_actions_planned": 450,
+  "target_actions_planned": 90,
+  "source_sha256": {
+    "training/diagnose_step84_market.py": "ae5b4b7c922a4ca8335d9d44a5ccfa76d2a42c20e3bd5f8d6cfbf46dc2b07a11",
+    "training/step84_market_report.py": "2e5f570792a54a917b84d058900d8726576ebf867c482a29ec1a934a7d288d5d",
+    "training/test_step84_market.py": "4ed8e0f19f123140d316e35a821db61d18ff03ed4550876337923e85060d6291"
+  },
+  "checks": [
+    "step84 fixed fingerprints and original persona bytes",
+    "exact phase2 rules and 24 products",
+    "two real endpoint routes and pinned base/tokenizer revision in generated vLLM commands",
+    "zero-utility rebuy vs positive low-to-high upgrade replay",
+    "cash and truncation rate denominators and reasoning-inclusive token spending",
+    "no_stock race vs missing pair vs qty vs private-offer stock",
+    "full original-engine CPU mock and score reconciliation",
+    "mock never labelled real; corrupted score rejected",
+    "original persona/agent.yaml/deployment adapter bytes preserved"
+  ]
+}

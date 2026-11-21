@@ -1,0 +1,15 @@
+{
+  "failed_run": "training/runs/20261119-212633_buyer_official_su7va01r",
+  "failure": "Both ranks CUDA OOM during longest-example preflight, before optimizer updates",
+  "cause": "Decoder eval mode bypassed configured gradient checkpointing",
+  "change": "Explicit train mode and active decoder checkpointing assertions before preflight",
+  "old_worker_sha256": "8a1519c572f5e2512a849413c7f86f87b8b3c46a62d361ba8ba0f8def31c85d7",
+  "new_worker_sha256": "f59cec0df35a3449f6a01728a51c71f07caf9854476affbc29edf6a9c8407182",
+  "cpu_tests_passed": 8,
+  "cpu_test_seconds": 16.534,
+  "cpu_test_log": "/tmp/adl_official_preflight_tests.log",
+  "actual_cpu_model_test": "Mixed Qwen3.5 linear/full attention: starts in eval, checkpoint functions actually called, equal loss and nonzero LoRA gradients",
+  "data_and_training_recipe_unchanged": true,
+  "gpu_retest_started_by_codex": false,
+  "gpu_peak_memory_after_fix_verified": false
+}

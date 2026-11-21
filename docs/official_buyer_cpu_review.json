@@ -1,0 +1,161 @@
+{
+  "date": "2026-11-19",
+  "gpu_training_or_model_inference_started": false,
+  "cpu_tests_passed": 8,
+  "test_seconds": 16.534,
+  "test_log": "/tmp/adl_official_preflight_tests.log",
+  "official_repo": "miulab/ADL26W-final-train",
+  "official_revision": "fa0f94cff3eeed5bc54da597ad5c2a45ef491e45",
+  "source_files": {
+    "README.md": {
+      "bytes": 1050,
+      "sha256": "90a463f93aac2e467f0e39bd7a22b5ee891d97d5aec1786451013e1fee107965"
+    },
+    "data/train-00000-of-00001.parquet": {
+      "bytes": 87733052,
+      "sha256": "85e4824b750cb42d77513c16759b0860ee90b1d0e55b1c1cb87e184a29dfa815"
+    }
+  },
+  "original_roles": {
+    "buyer": 1091,
+    "seller": 1208
+  },
+  "original_buyer_decisions": 34989,
+  "retained_on_decisions": 1347,
+  "curation_accounting_complete": true,
+  "splits": {
+    "train": {
+      "decisions": 890,
+      "trajectories": 191,
+      "groups": 43,
+      "actions": {
+        "buy_listed": 432,
+        "send_message": 172,
+        "wait": 67,
+        "post_to_room": 20,
+        "post_review": 129,
+        "accept_offer": 70
+      }
+    },
+    "validation": {
+      "decisions": 201,
+      "trajectories": 37,
+      "groups": 6,
+      "actions": {
+        "buy_listed": 107,
+        "post_review": 57,
+        "send_message": 27,
+        "accept_offer": 9,
+        "wait": 1
+      }
+    },
+    "test": {
+      "decisions": 256,
+      "trajectories": 41,
+      "groups": 6,
+      "actions": {
+        "send_message": 38,
+        "post_to_room": 5,
+        "buy_listed": 117,
+        "post_review": 61,
+        "accept_offer": 8,
+        "wait": 27
+      }
+    }
+  },
+  "full_epoch": {
+    "steps": 112,
+    "global_batch": 8,
+    "warmup_steps": 6,
+    "checkpoints": [
+      28,
+      56,
+      84,
+      112
+    ],
+    "padding_replays": 6,
+    "samples_per_rank": 448
+  },
+  "validation": {
+    "official_nll_examples": 48,
+    "current_rule_development_calls": 16,
+    "official_heldout_calls": 9,
+    "train_subset_calls": 6,
+    "planned_native_calls": 155,
+    "training_subset_seen_by_step": 28,
+    "cash_pairs_on_same_gpu": true
+  },
+  "recipe": {
+    "base_model": "Qwen/Qwen3.5-4B",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "rank": 16,
+    "alpha": 32,
+    "learning_rate": 5e-05,
+    "thinking": true,
+    "objective": "Native full assistant completion CE only; no extra tool-name loss",
+    "versions": {
+      "torch": "2.11.0",
+      "transformers": "5.22.1",
+      "peft": "0.21.2",
+      "accelerate": "1.15.0",
+      "safetensors": "0.8.0",
+      "pyarrow": "26.0.1",
+      "huggingface_hub": "2.4.0",
+      "vllm": "0.25.1",
+      "flash-linear-attention": null,
+      "causal-conv1d": null
+    }
+  },
+  "source_hashes": {
+    "training/train_official_buyer.py": "43aa1dbfaea39849d4f61090b2cf1276817b34e53fcf801f467e48335c9c8332",
+    "training/official_buyer_train.py": "f59cec0df35a3449f6a01728a51c71f07caf9854476affbc29edf6a9c8407182",
+    "training/official_buyer_data.py": "5c632b403a874c7410e4176a8e40828a224700d5e7deb858b4f9fed262fcd454",
+    "training/buyer_operations_train.py": "f053e67c3b90a5410e0fdf38d0916a256a2f0c728e9e5309840363089c34276a",
+    "training/reasoning_checkpoint.py": "cde21ba845780b331983199e2ac10ea2f5344e4071cc4e4da10e6380ce8ed860",
+    "training/buyer_hf_check.py": "1938af9ad5c12f6db58e6a8833f3d878a1d51a9ce67b45153bca430fbf2e6593",
+    "training/buyer_diagnostics.py": "7fa0be4e96839ecdc5fd797da4dc64279ad0295f37c00d8335c908111a081789",
+    "training/diagnostic_scores.py": "0f6a36d0afeddd74c2485a307584d72184783624de75d9fc528eccfbe6337598",
+    "training/official_buyer_report.py": "45946fd011db68598da4b5e4556553519ef958c6739ccd780b294225a71806fc",
+    "training/buyer_operations_data.py": "77f52096e37262ea5cbbf7dd34c9f92afabeb7f8cbf375bc7d15c5f52f9bb4d2",
+    "training/buyer_operations_v2_data.py": "fe7f8d9b284c96a58af27dc7454e5bc17ba1b9d23291914a414bd2daadf586ea",
+    "training/buyer_operations_v2_1_data.py": "077ef636d4db5a99ec0dfd23aee982b6fe484109b9efa2865f053eb177391bdd",
+    "training/persona_versions/buyer_official_v1/persona_1.md": "d8ef4e883bd0c992e2a35c70a26097d67c48f76ec09e9c1b80943d80c783191d",
+    "training/persona_versions/buyer_official_v1/persona_2.md": "1527c13f152f9cc9a792ea058543da9de6433c27f013440b2b25c5e41b2abe60",
+    "training/persona_versions/buyer_official_v1/persona_3.md": "5aa78a0cfe51ef53ff34bc06519ffbfe19c6939ea8297e2410e7ed28d73cd9d6"
+  },
+  "data_manifest_sha256": "3f06b38e5b0d5ae17689b707d4ef8438060642822dfe6010e1b339f8da7bbab9",
+  "checks": [
+    "Exact official answer preservation after null-padding normalization",
+    "Group/trajectory split isolation including private valuations",
+    "Only last assistant target loss",
+    "All six native tool templates parse",
+    "Current cash/quantity/source conditions",
+    "All training examples covered in one epoch",
+    "Matched training-subset prefix coverage",
+    "Official heldout alternatives permitted",
+    "CPU entry starts no GPU; two-rank fake launcher only",
+    "Exact optimizer/RNG resume recipe checks"
+  ],
+  "limitations": [
+    "All source buyer trajectories use older variable-horizon multiunit worlds. Original facts are preserved, not converted into new-rule complete episodes.",
+    "Only genuine short-thinking targets are in this ON baseline; OFF source records remain archived.",
+    "Validation has no post_to_room and one wait; supplementary checks do not establish broad generalization or grade.",
+    "CPU tests validate preprocessing, templates and pipeline; GPU execution, peak memory and model improvement remain untested.",
+    "Full-market evaluation is deferred at user request; no automatic deployment or testing on the sealed test set."
+  ],
+  "runtime_preflight_fix": {
+    "failed_run": "training/runs/20261119-212633_buyer_official_su7va01r",
+    "failure": "Both ranks CUDA OOM during longest-example preflight, before optimizer updates",
+    "cause": "Decoder eval mode bypassed configured gradient checkpointing",
+    "change": "Explicit train mode and active decoder checkpointing assertions before preflight",
+    "old_worker_sha256": "8a1519c572f5e2512a849413c7f86f87b8b3c46a62d361ba8ba0f8def31c85d7",
+    "new_worker_sha256": "f59cec0df35a3449f6a01728a51c71f07caf9854476affbc29edf6a9c8407182",
+    "cpu_tests_passed": 8,
+    "cpu_test_seconds": 16.534,
+    "cpu_test_log": "/tmp/adl_official_preflight_tests.log",
+    "actual_cpu_model_test": "Mixed Qwen3.5 linear/full attention: starts in eval, checkpoint functions actually called, equal loss and nonzero LoRA gradients",
+    "data_and_training_recipe_unchanged": true,
+    "gpu_retest_started_by_codex": false,
+    "gpu_peak_memory_after_fix_verified": false
+  }
+}

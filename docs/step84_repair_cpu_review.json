@@ -1,0 +1,39 @@
+{
+  "date": "2026-11-20",
+  "experiment": "step84_latest_persona_check_v1",
+  "supersedes": "step84_priority_cash_ablation_v1 (cancelled before GPU execution)",
+  "prepared_folder": "results/basic_checks/20261120-020127_step84_repair_li3u46ni",
+  "gpu_work_started": false,
+  "training_updates": 0,
+  "fixed_checkpoint": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/training/runs/20261119-213016_buyer_official_u3csnqyh/checkpoints/step_0084",
+  "latest_persona_source": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/agents/example_student/buyer",
+  "latest_persona_chars": [
+    6403,
+    7600,
+    7031
+  ],
+  "new_gpu_calls": 49,
+  "cached_baseline_calls": 25,
+  "new_calls_by_rank": {
+    "0": 25,
+    "1": 24
+  },
+  "cpu_tests_passed": 5,
+  "cpu_test_seconds": 13.073,
+  "cpu_test_log": "/tmp/adl_step84_latest_tests.log",
+  "plan_sha256": "20e6aa452b7255be4551c459e66c60392e52f44f5e8447b57b272b70a44a4efc",
+  "source_hashes": {
+    "training/step84_repair_plan.py": "1f2d465fec271c30331ace83c63f1bc32cb02959b00408793bc752e96d5c457f",
+    "training/check_step84_repair.py": "f59ad3641921f7b8efe2a4647cdbe08465c87cef7bbf331b4eec7bf6e86bfd44",
+    "training/official_buyer_train.py": "60551847800d6ef90231144d30dfd88b5c3f32f59157e49422d1365d59b90d7f",
+    "training/official_buyer_data.py": "5c632b403a874c7410e4176a8e40828a224700d5e7deb858b4f9fed262fcd454",
+    "training/buyer_hf_check.py": "1938af9ad5c12f6db58e6a8833f3d878a1d51a9ce67b45153bca430fbf2e6593",
+    "training/buyer_operations_train.py": "f053e67c3b90a5410e0fdf38d0916a256a2f0c728e9e5309840363089c34276a",
+    "training/buyer_operations_v2_data.py": "fe7f8d9b284c96a58af27dc7454e5bc17ba1b9d23291914a414bd2daadf586ea",
+    "training/buyer_operations_data.py": "77f52096e37262ea5cbbf7dd34c9f92afabeb7f8cbf375bc7d15c5f52f9bb4d2",
+    "agents/example_student/buyer/persona_1.md": "48e09c7917d565c8f637fd31daa0d5b2911389bc76f1e4daedb72f5b0fbe7b6b",
+    "agents/example_student/buyer/persona_2.md": "9a4761beaac3ccf5c1019af9770c5600cdf532d9485acd905233cf337c93c044",
+    "agents/example_student/buyer/persona_3.md": "61fb14b2ce742b21c1cc42ed333a504ea3aa67f32d646d89cdaefaf6d9dc14a4"
+  },
+  "limits": "Current user personas are used verbatim, no added rules. Previous step84 safety results used short experimental personas and do not establish current user persona performance. GPU experiment pending user execution."
+}

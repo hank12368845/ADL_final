@@ -1,0 +1,32 @@
+{
+  "folder": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/handin/checkpoint1_draft_20261120-235651",
+  "draft_only": true,
+  "zip_created": false,
+  "requires_COOL_layout_and_student_id": true,
+  "seller_is_untrained_starter": true,
+  "buyer_adapter": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/training/runs/20261120-203130_buyer_surgical_3hb_nseg/checkpoints/step_0010",
+  "seller_adapter": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/agents/example_student/seller/checkpoint",
+  "files": {
+    "agents/buyer/agent.yaml": "9d67089a774dad419ba4af7c5701d08415cf177ca4591e064c331bb4e4248a53",
+    "agents/buyer/persona_2.md": "9a4761beaac3ccf5c1019af9770c5600cdf532d9485acd905233cf337c93c044",
+    "agents/buyer/persona_1.md": "48e09c7917d565c8f637fd31daa0d5b2911389bc76f1e4daedb72f5b0fbe7b6b",
+    "agents/buyer/persona_3.md": "61fb14b2ce742b21c1cc42ed333a504ea3aa67f32d646d89cdaefaf6d9dc14a4",
+    "agents/buyer/checkpoint/adapter_model.safetensors": "736679c311a30b135fa8c9cb4a2fd5eff481f79790013bc201e497506047ab87",
+    "agents/buyer/checkpoint/adapter_config.json": "3f76526075f53749c5ecb75b2b77b4c83f1727a7c3862523586c21145411a080",
+    "agents/seller/agent.yaml": "5b1aa82c109fe2d7b42ebcf7038296238166395c5230efc84d94f9bebdbe2374",
+    "agents/seller/persona_2.md": "857ee1beaf30d8f9b2fc0dbcc50c96cf8df46347d2457bb8b137537c7a4f68fe",
+    "agents/seller/persona_1.md": "46c7a2d1f1eddc0e1661a347b67b20863a377294de6dd10828b4fc1d7e8cdfd8",
+    "agents/seller/persona_3.md": "7170417a063a7c90585b96eec3d1a1d635ef78556ea01938b1e5ccb43aac76d0",
+    "agents/seller/checkpoint/adapter_model.safetensors": "be7b27586f5904fedc6ad70c511e4e5240a55f74a4ef612defa86d1fd6f3fbfd",
+    "agents/seller/checkpoint/adapter_config.json": "34f1a56820d930389ddc9230bedd555e61d1b18a76cc2a6e378f78fc54b831c2"
+  },
+  "gpu_work": false,
+  "buyer_role_format_check": {
+    "errors": [],
+    "warnings": []
+  },
+  "seller_role_format_check": {
+    "errors": [],
+    "warnings": []
+  }
+}

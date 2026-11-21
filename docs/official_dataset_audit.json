@@ -1,0 +1,109 @@
+{
+  "roles": {
+    "buyer": 1091,
+    "seller": 1208
+  },
+  "actions": {
+    "buyer": {
+      "decisions": 34989,
+      "real_reasoning": 7466,
+      "tool_post_to_room": 978,
+      "tool_success": 31510,
+      "tool_send_message": 9241,
+      "tool_accept_offer": 4667,
+      "tool_post_review": 4806,
+      "error_no_stock": 1611,
+      "tool_wait": 8450,
+      "missing_tool_result": 1302,
+      "tool_buy_listed": 6573,
+      "tool_propose_swap": 167,
+      "tool_accept_swap": 46,
+      "error_message_too_long": 61,
+      "error_cannot_give": 6,
+      "error_bad_args": 72,
+      "error_insufficient_cash": 194,
+      "error_above_price_limit": 35,
+      "error_offer_closed": 21,
+      "error_exceeds_need": 27,
+      "error_offer_not_found": 16,
+      "error_unknown_agent": 14,
+      "error_not_listed": 54,
+      "not_one_native_call": 60,
+      "tool_private_state": 1,
+      "error_unknown_tool": 1,
+      "error_swap_closed": 1,
+      "error_cannot_complete": 3,
+      "error_swap_not_found": 1
+    },
+    "seller": {
+      "decisions": 38772,
+      "real_reasoning": 5688,
+      "tool_post_to_room": 564,
+      "tool_success": 36730,
+      "tool_make_offer": 12938,
+      "tool_send_message": 4744,
+      "tool_set_price": 13667,
+      "missing_tool_result": 1334,
+      "tool_wait": 6841,
+      "error_too_many_offers": 232,
+      "error_no_stock": 170,
+      "error_bad_args": 120,
+      "not_one_native_call": 16,
+      "error_below_floor": 143,
+      "error_unknown_agent": 13,
+      "error_message_too_long": 12,
+      "tool_accept_offer": 2,
+      "error_not_permitted": 2
+    }
+  },
+  "trajectory_modes": {
+    "buyer": {
+      "no_thinking": 744,
+      "mixed": 40,
+      "all_thinking": 307
+    },
+    "seller": {
+      "mixed": 44,
+      "all_thinking": 220,
+      "no_thinking": 944
+    }
+  },
+  "buyer_market_shapes": {
+    "12": {
+      "trajectories": 890,
+      "single_unit_tables": 0,
+      "fixed_horizon": 0,
+      "private_values": 278
+    },
+    "24": {
+      "trajectories": 80,
+      "single_unit_tables": 0,
+      "fixed_horizon": 0,
+      "private_values": 0
+    },
+    "6": {
+      "trajectories": 121,
+      "single_unit_tables": 0,
+      "fixed_horizon": 0,
+      "private_values": 29
+    }
+  },
+  "conservative_public_groups": {
+    "12": 93,
+    "24": 4,
+    "6": 27
+  },
+  "buyer_reasoning_chars": {
+    "min": 16,
+    "p50": 1291,
+    "p95": 18350,
+    "max": 51452
+  },
+  "findings": [
+    "Official data cover genuine multi-candidate markets and negotiation, unlike previous one-candidate synthetic training.",
+    "All buyer source utility tables allow multiple marginal units and all source horizons are variable; none is an exact final-rule episode.",
+    "Some buyers have private values. Grouping by private utility alone would risk splitting copies of one public market.",
+    "Source tool properties/arguments contain null union padding in some exports; the loader removes null schema fields and null arguments.",
+    "No official training run or model quality claim follows from this inventory."
+  ]
+}

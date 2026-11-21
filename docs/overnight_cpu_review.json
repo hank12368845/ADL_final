@@ -1,0 +1,16 @@
+{
+  "cpu_only": true,
+  "actual_gpu_or_queue_started": false,
+  "tests_passed": 5,
+  "test_log": "/tmp/adl_overnight_cpu_tests.log",
+  "controller_plan": "results/basic_checks/20261121-010913_overnight_mh34xxnf",
+  "total_actions": 7650,
+  "order": [
+    "seller_personas",
+    "buyer_economy"
+  ],
+  "sources": {
+    "training/overnight_evaluations.py": "5e4aeae09aad3d96c3ebdc022753a57f1b964997c03da9599b3001d03fc2d1a9",
+    "training/queue_buyer_economy.py": "3e3504017ddf8a8694b583f1e479f193ca6df1d76b8e566848407c56b8244ff7"
+  }
+}

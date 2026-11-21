@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-20",
+  "gpu_work_started": false,
+  "packages_actually_installed": false,
+  "cpu_tests_passed": 6,
+  "tests": [
+    "4 matched-market/plan tests including two complete mock450-action markets",
+    "2 mocked installer exact-wheel/source-build branches"
+  ],
+  "logs": [
+    "/tmp/adl_buyer_pair_cpu.log",
+    "/tmp/adl_kernel_installer_cpu.log"
+  ],
+  "source_sha256": {
+    "training/compare_buyer_markets.py": "44a923b95b64dc21b6931d7f66dde2b9f3716ac9432217290e4714ca8597b0af",
+    "training/install_fast_kernels.py": "ee30d719781e57bcb59af4339c978c175ad5d99f209506d96a0f04accc0722bb",
+    "training/test_buyer_market_pair.py": "2e401dcd03e09cc22230a0ce65523341c97fa1f27debe2c102c17e86d782e2e9"
+  },
+  "market_seed": 1,
+  "total_planned_actions": 900,
+  "formal_market_rules_unchanged": true,
+  "install_prefix": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/.cache/fast_kernels",
+  "limits": [
+    "Mock markets are not model results.",
+    "Installer network/compilation/CUDA correctness are not yet verified.",
+    "Single matched public-market seed is not a final grade guarantee."
+  ]
+}

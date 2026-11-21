@@ -1,0 +1,23 @@
+{
+  "cpu_only": true,
+  "gpu_service_started": false,
+  "tests": 5,
+  "passed": 5,
+  "test_log": "/tmp/adl_step10_economy_cpu_tests.log",
+  "official_mock_markets": 15,
+  "official_mock_actions": 6750,
+  "official_mock_student_actions_per_persona": 450,
+  "verified": [
+    "step10_adapter_and_original_personas",
+    "official_phase2_rules_and15_market_casting",
+    "dual_replica_preserves_grouping_and_weights",
+    "single_gpu_fallback_without_seating_changes",
+    "complete_official_mock_economy_and_unit_ledger_audit",
+    "resume_keeps14_finished_markets_and_restarts_partial_market",
+    "no_mix_of_mock_and_real",
+    "progress_resets_after_partial_market_replacement"
+  ],
+  "prepare_only_folder": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/results/basic_checks/20261120-234905_step10_economy_3gtc0641",
+  "script_sha256": "3dc0634a6d3da18a2594aec297380081aaa0ad29a30d42089a2e1c8f484aac28",
+  "model_scores_verified": false
+}

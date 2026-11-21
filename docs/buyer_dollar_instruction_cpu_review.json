@@ -1,0 +1,42 @@
+{
+  "cpu_only": true,
+  "gpu_model_work_started": false,
+  "plan": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/results/basic_checks/20261120-143650_dollar_instruction_4kourkgw/plan.json",
+  "plan_sha256": "848707726d51ca13e10519e6fbd54ec8eceb149aa6b21bf7a8095752fc86b833",
+  "tests": {
+    "command": "/home/hank/.cache/adl_final_venv/bin/python -m unittest training.test_dollar_instruction -v",
+    "passed": 5,
+    "failed": 0,
+    "elapsed_seconds": 11.407,
+    "scope": "CPU tokenizer/native parser, unchanged real personas and observations, answer-free instruction, empty native think, fixed routes, field scoring and mocked launcher; no model inference"
+  },
+  "instruction_chars": 329,
+  "persona_chars": {
+    "1": 6734,
+    "2": 7931,
+    "3": 7362
+  },
+  "adapters": {
+    "parent84": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/training/runs/20261119-213016_buyer_official_u3csnqyh/checkpoints/step_0084",
+    "dollar6": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/training/runs/20261120-141718_buyer_dollar_lines_sgkzzv1q/checkpoints/step_0006"
+  },
+  "new_gpu_calls": 24,
+  "training_updates": 0,
+  "sources": {
+    "training/diagnose_dollar_instruction.py": "b2e8248cc5a8f6173bab6e30d731dcac646c027f017881b44df2b98158345c64",
+    "training/buyer_dollar_lines.py": "6c18870c2e5bd0100f17b2e12f8d2ca8e8ac3ce3e80e124b4eec51ba9090cbf2",
+    "training/buyer_check_lines.py": "cc6f0ce167ab39189b7e1c54a7fb7916ffe8aa1768730cf03ec79a68aeed5e54",
+    "training/buyer_self_checks.py": "d73dc68d297644e1146c6b91cd107261910798233fc06ad4a1a9cbd29af287c0",
+    "training/buyer_operations_train.py": "f053e67c3b90a5410e0fdf38d0916a256a2f0c728e9e5309840363089c34276a",
+    "training/reasoning_checkpoint.py": "cde21ba845780b331983199e2ac10ea2f5344e4071cc4e4da10e6380ce8ed860",
+    "training/official_buyer_train.py": "60551847800d6ef90231144d30dfd88b5c3f32f59157e49422d1365d59b90d7f",
+    "training/step84_repair_plan.py": "1f2d465fec271c30331ace83c63f1bc32cb02959b00408793bc752e96d5c457f",
+    "training/buyer_hf_check.py": "1938af9ad5c12f6db58e6a8833f3d878a1d51a9ce67b45153bca430fbf2e6593",
+    "training/test_dollar_instruction.py": "59d86cd5517c2155ed37bd58be03435f2baabfe665227436b98961c47e41bfdc"
+  },
+  "free_gib": {
+    "/mnt/data1/hank/ADL/2026-ADL-Final-Release": 101.23,
+    "/tmp": 81.07
+  },
+  "limits": "No evidence yet of model compliance, accuracy improvement or market surplus. Plan is CPU-prepared only."
+}

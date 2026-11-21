@@ -1,0 +1,82 @@
+{
+  "date": "2026-11-19",
+  "cpu_tests_passed": 52,
+  "test_seconds": 39.439,
+  "test_log": "/tmp/adl_symmetric_tests.log",
+  "gpu_training_or_services_started": false,
+  "independent_engine_records_rebuilt_identically": true,
+  "data_manifest_sha256": "5f518e9148a8f6604eb1be66886da33d7befa790c58adf78391e1dc6973cb012",
+  "files_sha256": {
+    "training/symmetric_repair_data.py": "6e31ab0698070e930b40cd0836ac9b3d995eb1838459bb8392de19cd48c5bfde",
+    "training/symmetric_repair_sampling.py": "2f3467a88970b9a944c711b4110298b71dbb85149160e35cfd0873beeeb86033",
+    "training/configs/buyer_symmetric_repair_v1.yaml": "3e69bb9353c97899df2046a828c14a85800d66fd7889a8ccd6b527543bfd7cc6",
+    "training/evaluate_symmetric_repair.py": "29acde26d376c94e50d81677f5b1466e10feaede9edfd05adb5651ccba752149",
+    "training/evaluate_board_repair.py": "c83ec1c05b057711d4f3ce193230463589db167aa330b49ae8e6118df08b2b93",
+    "training/buyer_operations_train.py": "f053e67c3b90a5410e0fdf38d0916a256a2f0c728e9e5309840363089c34276a",
+    "training/train_buyer_operations.py": "20dcc7a9e6d8393f8439bd74a04a3f6073384d5d8304e99da5a8b2e1468aed39",
+    "training/test_symmetric_repair.py": "052f70e9e1226e17ee2a78f089a1d36101cec3eb782b98a29314fa2ab10f5a10"
+  },
+  "parent": "training/runs/20261119-134251_buyer_operations_50lhkufb/checkpoints/step_0032",
+  "thinking": true,
+  "train": 256,
+  "validation": 384,
+  "coverage": {
+    "board/p1": {
+      "buy_listed": 20,
+      "wait": 20
+    },
+    "board/p2": {
+      "buy_listed": 22,
+      "wait": 22
+    },
+    "board/p3": {
+      "buy_listed": 22,
+      "wait": 22
+    },
+    "offer/p1": {
+      "accept_offer": 20,
+      "wait": 20
+    },
+    "offer/p2": {
+      "accept_offer": 22,
+      "wait": 22
+    },
+    "offer/p3": {
+      "accept_offer": 22,
+      "wait": 22
+    }
+  },
+  "unique_message_inputs": 254,
+  "global_batch_actions": {
+    "buy_listed": 2,
+    "accept_offer": 2,
+    "wait": 4
+  },
+  "samples_per_gpu": {
+    "0": 128,
+    "1": 128
+  },
+  "first_16_actions": {
+    "accept_offer": 32,
+    "wait": 64,
+    "buy_listed": 32
+  },
+  "free_disk_gib": {
+    "project": 123.31,
+    "tmp": 81.66
+  },
+  "evaluation": {
+    "calls": 1152,
+    "models": [
+      "parent_on",
+      "repair16",
+      "repair32"
+    ],
+    "gpu_calls_expected": {
+      "0": 576,
+      "1": 576
+    },
+    "mock_and_schema_only": true
+  },
+  "limitation": "No GPU behavior or market surplus evidence for this candidate. Frozen narrow validation suite is a development diagnostic."
+}

@@ -1,0 +1,31 @@
+{
+  "cpu_only": true,
+  "gpu_model_work_started": false,
+  "prepared_plan": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/results/basic_checks/20261120-135015_self_check_entry_vw1m4yd_/plan.json",
+  "plan_sha256": "570acad5302dd89e50c58e74ed5327a2df6f3a20fd28c699e11dc65f52f6efc1",
+  "tests": {
+    "command": "/home/hank/.cache/adl_final_venv/bin/python -m unittest training.test_self_check_entry -v",
+    "passed": 6,
+    "failed": 0,
+    "elapsed_seconds": 11.607,
+    "scope": "CPU tokenizer/native parser, field-local line scoring, money-unit probe, no-answer prefix and mocked two-GPU launcher; not real HF inference"
+  },
+  "source_sha256": {
+    "training/diagnose_self_check_entry.py": "4a17516cde81b12e7ee3bda2767960f917794e70e352ee7ecc923d0975ad4c94",
+    "training/buyer_check_lines.py": "cc6f0ce167ab39189b7e1c54a7fb7916ffe8aa1768730cf03ec79a68aeed5e54",
+    "training/test_self_check_entry.py": "bf4de94b519cb45e53f8920cf6a92f15136314985e7e1ca690f6565cd58a1bfc"
+  },
+  "prefix": "{\"cash\":",
+  "models": [
+    "parent84",
+    "self_check12"
+  ],
+  "cases": 12,
+  "new_gpu_calls": 24,
+  "train_updates": 0,
+  "free_gib": {
+    "/mnt/data1/hank/ADL/2026-ADL-Final-Release": 101.61,
+    "/tmp": 81.09
+  },
+  "line_format_status": "Only render/parser/scoring prepared and CPU-tested; no training targets or model weights changed."
+}

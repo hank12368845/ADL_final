@@ -1,0 +1,113 @@
+{
+  "status": "CPU checks passed; actual GPU training/inference not run by Codex",
+  "data_manifest_sha256": "aaf09bb4d6034918bf0e0439bbe0100a81cb836408795581b9359c4807c61289",
+  "original_observations_histories_tool_labels_preserved": {
+    "train": 3072,
+    "validation": 384,
+    "test": 384
+  },
+  "splits": {
+    "validation": {
+      "raw": 384,
+      "tokenized": 384,
+      "actions": {
+        "buy_listed": 96,
+        "wait": 192,
+        "accept_offer": 96
+      },
+      "max_tokens": 9312,
+      "max_reasoning_tokens": 88,
+      "raw_sha256": "e38a05dc94ce1506011a4ea03644303d1d98548f394ea260ec8e2c1740b906aa",
+      "tokens_sha256": "326427e60bfae86bbe7457f37e789b66bacb4a011759938c229d102d0aa8d329"
+    },
+    "test": {
+      "raw": 384,
+      "tokenized": 384,
+      "actions": {
+        "buy_listed": 96,
+        "wait": 192,
+        "accept_offer": 96
+      },
+      "max_tokens": 9285,
+      "max_reasoning_tokens": 88,
+      "raw_sha256": "b06fa88cbad192f5955d793d59c1c078531e93e190128f55703df46bffed80a9",
+      "tokens_sha256": "20885b8a04f6949abf5fe9f83e0343fc25f30238edafcf2a07874e78ae72cbe9"
+    },
+    "train": {
+      "raw": 3072,
+      "tokenized": 3072,
+      "actions": {
+        "buy_listed": 768,
+        "wait": 1536,
+        "accept_offer": 768
+      },
+      "max_tokens": 9326,
+      "max_reasoning_tokens": 88,
+      "raw_sha256": "413bcb94ae386d4ab50f59f8547261e1ec550209c8a6dcf0950379ebd4a4a63c",
+      "tokens_sha256": "124656f37f973bfce3a708fc57579f471d4ee8460b12b64a3f20fe260a1e3743"
+    }
+  },
+  "pilot": {
+    "steps": 32,
+    "unique_samples": 256,
+    "samples_by_rank": {
+      "0": 128,
+      "1": 128
+    },
+    "actions": {
+      "accept_offer": 64,
+      "wait": 128,
+      "buy_listed": 64
+    },
+    "personas": {
+      "1": 98,
+      "2": 84,
+      "3": 74
+    },
+    "histories": {
+      "recorded": 118,
+      "fresh": 138
+    },
+    "cash_variants": {
+      "zero": 12,
+      "wide": 20,
+      "equal": 18,
+      "above_one": 14
+    }
+  },
+  "epoch_steps": 384,
+  "two_epoch_steps": 768,
+  "full_two_epoch_coverage_verified": true,
+  "pilot_prefix_matches_epoch_plan": true,
+  "cpu_regressions": {
+    "passed": 38,
+    "log": "/tmp/adl_buyer_reasoning_all_tests.log"
+  },
+  "cpu_only_optimizer_scheduler_rng_resume_exact": true,
+  "fake_worker": {
+    "calls": 768,
+    "gpu_routes": {
+      "0": 384,
+      "1": 384
+    },
+    "native_thinking_request_validated": true,
+    "note": "Fake responses test plumbing and gate calculations, not model performance."
+  },
+  "sources_sha256": {
+    "training/buyer_reasoning_data.py": "9543135e73121f25affe3be63516542d3913b3c7febb4f11f1a5e9d85a3afccd",
+    "training/buyer_reasoning_sampling.py": "72cb64ca50bfcf4fca20ab78de6c1c474d90c8140304f1cfc0d6a82133ce7f59",
+    "training/reasoning_checkpoint.py": "cde21ba845780b331983199e2ac10ea2f5344e4071cc4e4da10e6380ce8ed860",
+    "training/buyer_reasoning_gate.py": "83df34a6ae06e69f58bae4e329462b85a00615534caf8c4a091557560640335d",
+    "training/evaluate_buyer_reasoning.py": "737a3ed152011c03a3569338b479c42c3f8e5a90004fffb5c09e200c251af77a",
+    "training/buyer_operations_train.py": "90bf5597ed4dddfe805b39836e2ebbc44efcc6a71c0b22a10ed07fdaa955f758",
+    "training/train_buyer_operations.py": "f13eb369247c2a4892ead2c005d42de1895b50d760b31122206d257b105cd61c",
+    "training/buyer_diagnostics.py": "7fa0be4e96839ecdc5fd797da4dc64279ad0295f37c00d8335c908111a081789",
+    "training/configs/buyer_reasoning_v1.yaml": "ec0fd9f5f4ef5d0b7eddeb6109308232ecac429abffc96ab5549c15fe6ba1a14",
+    "training/test_buyer_reasoning.py": "dbee576a805e76edab3fa4d5cf3d74b4adcd1c5784c6e704c05b72d2ed51031b"
+  },
+  "final_reasoning_tests": {
+    "passed": 7,
+    "log": "/tmp/adl_buyer_reasoning_final_tests.log",
+    "includes": "standalone native-schema import, ON CPU preparation, exact resume and fake two-GPU gate"
+  }
+}

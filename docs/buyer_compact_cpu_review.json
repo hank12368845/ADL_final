@@ -1,0 +1,45 @@
+{
+  "cpu_only": true,
+  "gpu_training_or_model_inference_started": false,
+  "prepared_plan": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/results/basic_checks/20261120-145859_compact_buyer_zinybnh1/plan.json",
+  "plan_sha256": "2b5b2dbe69d664731a320c6b4eab580cf9b64566c85d97673c406ee934a024f3",
+  "tests": {
+    "command": "/home/hank/.cache/adl_final_venv/bin/python -m unittest training.test_compact_buyer -v",
+    "passed": 5,
+    "failed": 0,
+    "elapsed_seconds": 23.435,
+    "scope": "CPU tokenizer/native parser, unchanged facts/real personas, fixed step84/routes, all-wait rejection, pending semantic evidence and mocked dual-GPU launcher"
+  },
+  "persona_chars": {
+    "1": 1830,
+    "2": 1880,
+    "3": 1916
+  },
+  "mean_prompt_tokens": {
+    "original": 7813.25,
+    "compact": 6301.583333333333
+  },
+  "sources": {
+    "training/evaluate_compact_buyer.py": "2bb306546b67151d2ffa6b4a1d9502e2393d0b67c67eac1f9b77686916debd9b",
+    "training/buyer_dollar_lines.py": "6c18870c2e5bd0100f17b2e12f8d2ca8e8ac3ce3e80e124b4eec51ba9090cbf2",
+    "training/buyer_check_lines.py": "cc6f0ce167ab39189b7e1c54a7fb7916ffe8aa1768730cf03ec79a68aeed5e54",
+    "training/buyer_self_checks.py": "d73dc68d297644e1146c6b91cd107261910798233fc06ad4a1a9cbd29af287c0",
+    "training/buyer_operations_train.py": "f053e67c3b90a5410e0fdf38d0916a256a2f0c728e9e5309840363089c34276a",
+    "training/reasoning_checkpoint.py": "cde21ba845780b331983199e2ac10ea2f5344e4071cc4e4da10e6380ce8ed860",
+    "training/official_buyer_train.py": "60551847800d6ef90231144d30dfd88b5c3f32f59157e49422d1365d59b90d7f",
+    "training/step84_repair_plan.py": "1f2d465fec271c30331ace83c63f1bc32cb02959b00408793bc752e96d5c457f",
+    "training/buyer_hf_check.py": "1938af9ad5c12f6db58e6a8833f3d878a1d51a9ce67b45153bca430fbf2e6593",
+    "training/persona_versions/buyer_compact_check_v1/persona_1.md": "53983f9794473541377886cf597aeaac09e07fdf5230791d74bbfc5ad6a17ad4",
+    "training/persona_versions/buyer_compact_check_v1/persona_2.md": "1dda5e1284097fbc900730e7e3ebeb5205cb40f9387c4c9f5b2710df8c6e043e",
+    "training/persona_versions/buyer_compact_check_v1/persona_3.md": "8e081a0d060d0dc5277b7df8c22e3ef2a11f80e5cce1dd1bed59e3cf0f8e44cc"
+  },
+  "new_gpu_calls": 36,
+  "cached_parent_calls": 36,
+  "training_updates": 0,
+  "semantic_gate": "Requires subsequent evidence review; keyword matches are not scored as semantic correctness.",
+  "free_gib": {
+    "/mnt/data1/hank/ADL/2026-ADL-Final-Release": 101.22,
+    "/tmp": 81.08
+  },
+  "limits": "No GPU memory/compliance/accuracy or market surplus result yet."
+}

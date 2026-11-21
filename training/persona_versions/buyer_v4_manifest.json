@@ -1,0 +1,30 @@
+{
+  "version": "v4",
+  "backup": "training/persona_versions/buyer_v3",
+  "gpu_tested": true,
+  "changes": [
+    "exact current board pair check",
+    "one-turn failed-pair cooldown",
+    "early bounded collision avoidance",
+    "p2 per-call state reminder and consistent quote example",
+    "p3 initial high-grade probability 2/3 with low-delivery penalty"
+  ],
+  "personas": {
+    "persona_1.md": {
+      "chars": 6402,
+      "sha256": "48e09c7917d565c8f637fd31daa0d5b2911389bc76f1e4daedb72f5b0fbe7b6b"
+    },
+    "persona_2.md": {
+      "chars": 7599,
+      "sha256": "9a4761beaac3ccf5c1019af9770c5600cdf532d9485acd905233cf337c93c044"
+    },
+    "persona_3.md": {
+      "chars": 7030,
+      "sha256": "61fb14b2ce742b21c1cc42ed333a504ea3aa67f32d646d89cdaefaf6d9dc14a4"
+    }
+  },
+  "tested_scope": "frozen_diagnostic_only",
+  "market_tested": false,
+  "diagnostic_run": "results/basic_checks/20261118-170543_buyer_diagnostic_0yk6z83o",
+  "assessment": "regression versus v3 on this paired diagnostic"
+}

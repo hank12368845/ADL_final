@@ -1,0 +1,56 @@
+{
+  "time": "2026-11-17T13:55:09.979973",
+  "preserved": {
+    "weights": "/mnt/data1/hank/ADL/adl_hw1/artifacts/final/model/checkpoint-final/model.safetensors",
+    "archive": "/mnt/data1/hank/ADL/adl_hw1/submission_assets/model_bundle.zip"
+  },
+  "verified_files": [
+    {
+      "path": "/mnt/data1/hank/ADL/adl_hw1/artifacts/submission_check/clean_20261003/submission/model_bundle.zip",
+      "bytes": 1129542548,
+      "identical_to": "/mnt/data1/hank/ADL/adl_hw1/submission_assets/model_bundle.zip",
+      "sha256": "2208711384bface8156b054d2b8d21087c679f69096051fc191b964b8aeeb387"
+    },
+    {
+      "path": "/mnt/data1/hank/ADL/adl_hw1/artifacts/submission_check/clean_20261003/submission/artifacts/final/model/checkpoint-final/model.safetensors",
+      "bytes": 1112229616,
+      "identical_to": "/mnt/data1/hank/ADL/adl_hw1/artifacts/final/model/checkpoint-final/model.safetensors",
+      "sha256": "7662a395c6657ff6ff4f91e33172ee9895e7ab0111ce3b53bd7cf209d13aac91"
+    },
+    {
+      "path": "/mnt/data1/hank/ADL/adl_hw1/artifacts/submission_check/run_20261003/submission/model_bundle.zip",
+      "bytes": 1129542548,
+      "identical_to": "/mnt/data1/hank/ADL/adl_hw1/submission_assets/model_bundle.zip",
+      "sha256": "2208711384bface8156b054d2b8d21087c679f69096051fc191b964b8aeeb387"
+    },
+    {
+      "path": "/mnt/data1/hank/ADL/adl_hw1/artifacts/submission_check/run_20261003/submission/artifacts/final/model/checkpoint-final/model.safetensors",
+      "bytes": 1112229616,
+      "identical_to": "/mnt/data1/hank/ADL/adl_hw1/artifacts/final/model/checkpoint-final/model.safetensors",
+      "sha256": "7662a395c6657ff6ff4f91e33172ee9895e7ab0111ce3b53bd7cf209d13aac91"
+    },
+    {
+      "path": "/mnt/data1/hank/ADL/adl_hw1/artifacts/submission_cleanup/lean_submission/isolated/r15944022/model_bundle.zip",
+      "bytes": 1129542548,
+      "identical_to": "/mnt/data1/hank/ADL/adl_hw1/submission_assets/model_bundle.zip",
+      "sha256": "2208711384bface8156b054d2b8d21087c679f69096051fc191b964b8aeeb387"
+    },
+    {
+      "path": "/mnt/data1/hank/ADL/adl_hw1/artifacts/submission_cleanup/lean_submission/isolated/r15944022/artifacts/final/model/checkpoint-final/model.safetensors",
+      "bytes": 1112229616,
+      "identical_to": "/mnt/data1/hank/ADL/adl_hw1/artifacts/final/model/checkpoint-final/model.safetensors",
+      "sha256": "7662a395c6657ff6ff4f91e33172ee9895e7ab0111ce3b53bd7cf209d13aac91"
+    }
+  ],
+  "deleted": [
+    "/mnt/data1/hank/ADL/adl_hw1/artifacts/submission_check/clean_20261003/submission/model_bundle.zip",
+    "/mnt/data1/hank/ADL/adl_hw1/artifacts/submission_check/clean_20261003/submission/artifacts/final/model/checkpoint-final/model.safetensors",
+    "/mnt/data1/hank/ADL/adl_hw1/artifacts/submission_check/run_20261003/submission/model_bundle.zip",
+    "/mnt/data1/hank/ADL/adl_hw1/artifacts/submission_check/run_20261003/submission/artifacts/final/model/checkpoint-final/model.safetensors",
+    "/mnt/data1/hank/ADL/adl_hw1/artifacts/submission_cleanup/lean_submission/isolated/r15944022/model_bundle.zip",
+    "/mnt/data1/hank/ADL/adl_hw1/artifacts/submission_cleanup/lean_submission/isolated/r15944022/artifacts/final/model/checkpoint-final/model.safetensors"
+  ],
+  "free_before": 62624608256,
+  "free_after": 69349965824,
+  "removed_bytes": 6725316492
+}

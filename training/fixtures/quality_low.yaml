@@ -1,0 +1,6 @@
+id: quality_probe
+role: seller
+owner: ta
+controller: scripted
+strategy: haggling_seller
+params: {list_factor: 1.0, step: 0.0, min_markup: 1.05, cheat: 1.0, certify: false}

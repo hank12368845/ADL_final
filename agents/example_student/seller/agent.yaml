@@ -5,4 +5,4 @@
 #   persona_1.md ... your personas, in the order to use them (grading plays the first three)
 #   agent.yaml       this file; optional. Its only setting: thinking mode.
 #
-reasoning: false     # play without thinking (the default); true if your LoRA was trained with it
+reasoning: true      # checkpoint1 baseline and planned seller SFT both use native thinking ON

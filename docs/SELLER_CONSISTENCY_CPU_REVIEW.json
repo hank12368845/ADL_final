@@ -1,0 +1,93 @@
+{
+  "cpu_only": true,
+  "gpu_work_started": false,
+  "tests": 12,
+  "passed": true,
+  "elapsed_seconds": 12.248385180952027,
+  "data_manifest_sha256": "001f2c8226ea7389c3aeceb213b0d3a977b8afe21f712f16b1239e35efa68ab3",
+  "original_parent_source_guard_passed": true,
+  "current_personas_equal_frozen_v2": true,
+  "training": {
+    "examples": 288,
+    "native": 216,
+    "controlled": 72,
+    "steps": 36,
+    "batch": 8,
+    "per_batch_native": 6,
+    "per_batch_control": 2,
+    "actions": {
+      "set_price": 150,
+      "make_offer": 92,
+      "wait": 28,
+      "send_message": 15,
+      "post_to_room": 3
+    },
+    "long_native": 18,
+    "max_tokens": 16338,
+    "history": {
+      "6": 16,
+      "5": 1,
+      "4": 1,
+      "2": 157,
+      "1": 76,
+      "0": 37
+    }
+  },
+  "evaluation": {
+    "calls": 30,
+    "kinds": {
+      "heldout_controls": 12,
+      "positive_regression": 9,
+      "official_heldout": 6,
+      "real_market_development": 3
+    },
+    "real_market_cases_are_development_only": true
+  },
+  "quarantined": 8,
+  "source_code_sha256": {
+    "training/seller_consistency_data.py": "41e3fead6180f61fa7a4e2158bc3674579805c8e8254d67232a6ed1efaa33795",
+    "training/seller_consistency_train.py": "ca2879bae2610f412d0eb2d3559bb69cf42d3761c682220355657d15b29c99b0",
+    "training/train_seller_consistency.py": "de833be8511315fcdfb4e6b8db8a3c542e3bc186bcc3304f244fc48ebc783c2b",
+    "training/test_seller_consistency.py": "21a2bdb6b8c6344dd0d1505af5b8e9e0a96a7343fa3fc1f970ce1fe664ce1f50"
+  },
+  "checks": [
+    {
+      "args": [
+        "-m",
+        "unittest",
+        "training.test_seller_consistency",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_cpu_entry_and_resource_wait_never_launch_gpu (training.test_seller_consistency.SellerConsistencyTests.test_cpu_entry_and_resource_wait_never_launch_gpu) ... ok\ntest_engine_acceptance_is_separate_from_stock_guard (training.test_seller_consistency.SellerConsistencyTests.test_engine_acceptance_is_separate_from_stock_guard) ... ok\ntest_engine_controls_flip_with_stock_and_deadline (training.test_seller_consistency.SellerConsistencyTests.test_engine_controls_flip_with_stock_and_deadline) ... ok\ntest_gate_rejects_all_wait_and_persona_regression (training.test_seller_consistency.SellerConsistencyTests.test_gate_rejects_all_wait_and_persona_regression) ... ok\ntest_horizon_quarantine_keeps_expiry_and_valid_carried_note (training.test_seller_consistency.SellerConsistencyTests.test_horizon_quarantine_keeps_expiry_and_valid_carried_note) ... ok\ntest_long_case_routing_uses_all_replicas_and_is_complete (training.test_seller_consistency.SellerConsistencyTests.test_long_case_routing_uses_all_replicas_and_is_complete) ... ok\ntest_native_tokens_history_and_eos_remain_faithful (training.test_seller_consistency.SellerConsistencyTests.test_native_tokens_history_and_eos_remain_faithful) ... ok\ntest_original_targets_splits_and_batches (training.test_seller_consistency.SellerConsistencyTests.test_original_targets_splits_and_batches) ... ok\ntest_public_bluff_not_treated_as_truth_violation (training.test_seller_consistency.SellerConsistencyTests.test_public_bluff_not_treated_as_truth_violation) ... ok\ntest_stale_input_is_allowed_but_incorrect_target_stock_is_not (training.test_seller_consistency.SellerConsistencyTests.test_stale_input_is_allowed_but_incorrect_target_stock_is_not) ... ok\ntest_unclosed_reasoning_cannot_pass_even_if_raw_tool_parses (training.test_seller_consistency.SellerConsistencyTests.test_unclosed_reasoning_cannot_pass_even_if_raw_tool_parses) ... ok\ntest_wrapper_wait_single_and_dual_pipeline_with_cpu_stub (training.test_seller_consistency.SellerConsistencyTests.test_wrapper_wait_single_and_dual_pipeline_with_cpu_stub) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 7.621s\n\nOK\n"
+    },
+    {
+      "args": [
+        "-u",
+        "training/train_seller_consistency.py",
+        "--cpu-check"
+      ],
+      "exit_code": 0,
+      "stdout": "CPU: checking repaired data, parent step12, unchanged v2 personas, source fingerprints and kernel receipt.\nPASS CPU only: 216 official replay +72 engine controls, 36 steps, parent+18/36 evaluations; no GPU query or model execution.\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "-m",
+        "py_compile",
+        "training/seller_consistency_data.py",
+        "training/seller_consistency_train.py",
+        "training/train_seller_consistency.py",
+        "training/test_seller_consistency.py"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "limits": [
+    "CPU mock checks do not prove CUDA memory/gradients or new model behavior.",
+    "No new GPU training, inference, market, or deployment was started."
+  ]
+}

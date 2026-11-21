@@ -1,0 +1,62 @@
+{
+  "cpu_only": true,
+  "source": {
+    "repo": "miulab/ADL26W-final-train",
+    "revision": "fa0f94cff3eeed5bc54da597ad5c2a45ef491e45",
+    "files": {
+      "README.md": {
+        "bytes": 1050,
+        "sha256": "90a463f93aac2e467f0e39bd7a22b5ee891d97d5aec1786451013e1fee107965"
+      },
+      "data/train-00000-of-00001.parquet": {
+        "bytes": 87733052,
+        "sha256": "85e4824b750cb42d77513c16759b0860ee90b1d0e55b1c1cb87e184a29dfa815"
+      }
+    }
+  },
+  "seller_trajectories": 1208,
+  "public_market_groups_before_split": 335,
+  "product_count_distribution_trajectories": {
+    "12": 1086,
+    "24": 50,
+    "6": 72
+  },
+  "counts": {
+    "assistant_decisions": 38772,
+    "schema_success_current_horizon_margin_candidates": 27462,
+    "candidates_with_native_reasoning": 3247
+  },
+  "raw_actions": {
+    "post_to_room": 555,
+    "make_offer": 12938,
+    "send_message": 4744,
+    "set_price": 13661,
+    "wait": 6840,
+    "accept_offer": 2
+  },
+  "candidate_actions": {
+    "post_to_room": 409,
+    "make_offer": 9533,
+    "send_message": 4099,
+    "set_price": 10494,
+    "wait": 2927
+  },
+  "exclusion_counts": {
+    "outside_current_tools_or_horizon": 8891,
+    "unsuccessful_or_missing_result": 1880,
+    "nonpositive_unit_margin": 284,
+    "argument_keys": 100,
+    "missing_observation_or_single_tool": 32,
+    "no_stock_or_invalid_grade_cost": 47,
+    "argument_length": 60,
+    "unknown_tool": 2,
+    "argument_range": 14
+  },
+  "limits": [
+    "Availability audit only; not a tokenized training set or trained model.",
+    "Source rules include older market horizons and other differences; current seller compatibility needs further review.",
+    "Reasoning presence does not establish its length or correctness.",
+    "Success/margin candidates do not prove high-profit strategy.",
+    "No training or GPU inference was run."
+  ]
+}

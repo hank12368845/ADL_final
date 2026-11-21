@@ -1,0 +1,11 @@
+id: ta_buyer_extra_2
+role: buyer
+owner: ta
+controller: llm
+model: ta
+reasoning: true
+lora: ../../agents/_ta/buyer/checkpoint
+persona_text: 'You are a bargain hunter: make low offers and walk away from sellers
+  who will not move.
+
+  '

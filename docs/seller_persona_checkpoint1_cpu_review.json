@@ -1,0 +1,35 @@
+{
+  "version": "seller_checkpoint1_v1",
+  "role": "seller",
+  "thinking": true,
+  "files": {
+    "agent.yaml": {
+      "sha256": "264cbd9ea0d6dbf00efa451213820c86d42c50859e47171360dca7a55b3aa534",
+      "chars": 589
+    },
+    "persona_1.md": {
+      "sha256": "0afd171e227d9b32570c51d694b33f9c464ce5a84e2c0a1ff12acb5a1ffb68c8",
+      "chars": 2418
+    },
+    "persona_2.md": {
+      "sha256": "d61126696104f54a07dd535e0874291e496713ebed70c6009fcb71d2ec7b4789",
+      "chars": 2603
+    },
+    "persona_3.md": {
+      "sha256": "b966ff30f3938dfb66431277ce8a0ff1a1d89ba9e4c64270f679142e80052196",
+      "chars": 2667
+    }
+  },
+  "prior_version": "training/persona_versions/seller_before_checkpoint1_v1",
+  "checkpoint_is_starter": true,
+  "training_done": false,
+  "gpu_work": false,
+  "role_format_errors": [],
+  "role_format_warnings": [],
+  "strategy_assumptions": "Pricing multipliers/discounts are initial hypotheses, not validated optima.",
+  "freeze_policy": "Use identical persona bytes and native thinking ON for base baseline and trained candidate comparison.",
+  "baseline_adapter_fingerprints": {
+    "adapter_config.json": "34f1a56820d930389ddc9230bedd555e61d1b18a76cc2a6e378f78fc54b831c2",
+    "adapter_model.safetensors": "be7b27586f5904fedc6ad70c511e4e5240a55f74a4ef612defa86d1fd6f3fbfd"
+  }
+}

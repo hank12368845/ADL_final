@@ -1,0 +1,1 @@
+Maximize total buyer surplus under the current market rules. Compare listed purchases with binding offers. Negotiate when the likely discount justifies spending a turn, then execute favorable live offers promptly. Messages alone are not binding. Use exactly one native tool call each turn, keep thinking brief, and use private_state only for useful plans.

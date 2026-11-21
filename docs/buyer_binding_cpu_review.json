@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-20",
+  "gpu_work_started": false,
+  "model_improvement_verified": false,
+  "unittest_command": "/home/hank/.cache/adl_final_venv/bin/python -m unittest training.test_buyer_binding -v",
+  "tests_passed": 8,
+  "test_log": "/tmp/adl_binding_torchrun_fix_cpu.log",
+  "cpu_prepare_passed": true,
+  "data_manifest_sha256": "0e4d201cc75454c4478f962be4547f2c792a679f141d35b4bbb2b6fbf6e4cc8b",
+  "train_examples": 384,
+  "training_steps": 48,
+  "evaluation_calls_per_model": 90,
+  "mean_input_target_tokens": 8244.447916666666,
+  "max_input_target_tokens": 13728,
+  "max_teacher_think_tokens": 90,
+  "source_sha256": {
+    "training/buyer_binding_data.py": "5e370eaeebf01daa4b60839b58f9e768fd884807bbdeced6b9757ce698f38a09",
+    "training/buyer_binding_eval.py": "31d8d9f70046a8e9a11914d5279b00a8c694ff207825734716c18db10452d459",
+    "training/buyer_binding_train.py": "29c83fb6bf7e8fb63b46a96b84043143ad205243258459cb4689973dd906b53b",
+    "training/train_buyer_binding.py": "07d6327cdfa09d90615f7a342c182c32ed9b8a638f4bafe8f386a119799e1645",
+    "training/test_buyer_binding.py": "cca53c5ca9da13bcff8e35b4a5f4b23f65603ebfbd8d4185c138da6d8c1324e6"
+  },
+  "limitations": [
+    "CPU mock-client/controller checks are not model results.",
+    "Real GPU backward preflight, training and all model evaluations remain user-launched."
+  ],
+  "launcher_fix": "Separate torchrun arguments from training script with --; installed torchrun parser tested for preflight and train."
+}

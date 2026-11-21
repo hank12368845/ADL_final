@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-20",
+  "scope": "CPU-only; tokenizer, provenance, parser/scoring and fake launcher; no GPU model execution",
+  "tests": {
+    "full_suite": "5 tests passed in 34.572s",
+    "after_progress_bar_edit": "targeted progress test passed in 9.408s; setUpClass also reconstructed final source plan"
+  },
+  "new_gpu_calls_executed": 0,
+  "training_updates": 0,
+  "checks": [
+    "identical original prompts and cached step84 scores",
+    "no teacher response in inference plan",
+    "direct base loader has no adapter; incomplete weights rejected",
+    "fake launch/report and source change/incomplete output rejection",
+    "all-wait capture is zero and no automatic winner",
+    "original persona and submission adapter bytes preserved",
+    "loading heartbeat/progress bar/log saved"
+  ],
+  "sources": {
+    "training/evaluate_base_step84.py": "2679690ebf275a31dd876e020325c251f39e8ef9b447d00f7d1b73112d8d801f",
+    "training/test_base_step84.py": "1a97064a3f624f24d980fd11649e9d5ea361ad9905a7c0a1758cf29183fd4d54"
+  }
+}

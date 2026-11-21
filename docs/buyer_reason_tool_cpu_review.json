@@ -1,0 +1,26 @@
+{
+  "date": "2026-11-20",
+  "experiment": "brakes_reason_tool_diagnostic_v1",
+  "prepared_folder": "results/basic_checks/20261120-124227_brakes_reason_tool_nsii8kk0",
+  "new_gpu_work_started": false,
+  "training_updates": 0,
+  "cpu_tests_passed": 4,
+  "cpu_test_seconds": 11.933,
+  "cpu_test_log": "/tmp/adl_reason_tool_tests.log",
+  "new_gpu_calls": 24,
+  "calls_per_rank": {
+    "0": 12,
+    "1": 12
+  },
+  "max_new_tokens": 1024,
+  "sources": {
+    "training/diagnose_buyer_brakes.py": "9f8fa1ab79c76d521e360217e9f4ed40428cf9ab249900f9070e7414d7f7a37a",
+    "training/buyer_operations_train.py": "f053e67c3b90a5410e0fdf38d0916a256a2f0c728e9e5309840363089c34276a",
+    "training/reasoning_checkpoint.py": "cde21ba845780b331983199e2ac10ea2f5344e4071cc4e4da10e6380ce8ed860",
+    "training/official_buyer_train.py": "60551847800d6ef90231144d30dfd88b5c3f32f59157e49422d1365d59b90d7f",
+    "training/step84_repair_plan.py": "1f2d465fec271c30331ace83c63f1bc32cb02959b00408793bc752e96d5c457f",
+    "training/buyer_hf_check.py": "1938af9ad5c12f6db58e6a8833f3d878a1d51a9ce67b45153bca430fbf2e6593"
+  },
+  "plan_sha256": "8b26b869e7f77e8ad1bdd71b15d5d2ae4e2996a60049df3879a94a3029d83d9d",
+  "limits": "Controlled reasoning-prefix intervention; not grading inference, training, proof of hidden reasoning, or market surplus. A changed prefix may itself change behavior."
+}

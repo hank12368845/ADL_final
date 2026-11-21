@@ -1,0 +1,13 @@
+{
+  "cpu_only": true,
+  "gpu_started": false,
+  "tests_passed": 3,
+  "test_log": "/tmp/adl_seller_tp2_cpu_tests.log",
+  "source_sha256": "887488dda5f7738f41d9c8cebb91ad676c8c11387f091bb19dfd9b851fa8ed12",
+  "actual_fit_validated": false,
+  "checks": [
+    "shared TP utilization leaves reserve on each card",
+    "official vllm_command builds tensor-parallel-size2 and keeps64K/sampling/market",
+    "prepare-only never queries or starts GPU"
+  ]
+}

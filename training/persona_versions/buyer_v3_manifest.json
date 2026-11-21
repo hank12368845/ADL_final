@@ -1,0 +1,20 @@
+{
+  "p1": {
+    "before_chars": 2195,
+    "after_chars": 5196,
+    "before_sha256": "b8e0ab2a26105bbc97cf8ceaa8d2efcad29be74f23388aed9c394ff769688470",
+    "after_sha256": "43fefbf0bfb13f609eb09d162b7676b0c60017bf264565520865f7ca7d444290"
+  },
+  "p2": {
+    "before_chars": 2658,
+    "after_chars": 6165,
+    "before_sha256": "fb54abb34d5cda39b3aa3208197c56e771bc190f599435ff69e2f8fc47ee6578",
+    "after_sha256": "e25ed3f47967d79faee61c08f2015d39f581b5a2e76cc09ae2c7c591b1a223ea"
+  },
+  "p3": {
+    "before_chars": 2505,
+    "after_chars": 5506,
+    "before_sha256": "660576743cd8618d2bd70cbd011448436eae0a85d11a253248c50588c6adde97",
+    "after_sha256": "d4b89d2c4f1b37b337fd3c4811046bc861678d2710622627be43120340c8a9d0"
+  }
+}

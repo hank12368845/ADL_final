@@ -1,0 +1,162 @@
+{
+  "run": "training/runs/20261119-213016_buyer_official_u3csnqyh",
+  "training_complete": true,
+  "optimizer_steps": 112,
+  "wrapper_seconds": 12462.797390881926,
+  "original_candidate_selection_reliable": false,
+  "reason": "Original HF generation used endoftext EOS but not tokenizer im_end; hallucinated later turns polluted parsing and truncation metrics.",
+  "cpu_first_turn_audit": [
+    {
+      "step": 0,
+      "completion_loss": 0.9108311471839746,
+      "current_first_turn": {
+        "calls": 16,
+        "valid_actions": 9,
+        "positive_captured": 2,
+        "positive_cases": 8,
+        "negative_correct_waits": 0,
+        "both_correct": 0,
+        "unaffordable": 1,
+        "no_tool": 6,
+        "truncated": 1,
+        "generated_tokens": 10284
+      },
+      "official_heldout": {
+        "passed": 6,
+        "calls": 9,
+        "positive_trades": 4,
+        "truncated": 1
+      },
+      "official_train_seen": {
+        "passed": 5,
+        "calls": 6,
+        "positive_trades": 2,
+        "truncated": 1
+      }
+    },
+    {
+      "step": 28,
+      "completion_loss": 0.6735059296091398,
+      "current_first_turn": {
+        "calls": 16,
+        "valid_actions": 11,
+        "positive_captured": 4,
+        "positive_cases": 8,
+        "negative_correct_waits": 0,
+        "both_correct": 0,
+        "unaffordable": 2,
+        "no_tool": 2,
+        "truncated": 2,
+        "generated_tokens": 6568
+      },
+      "official_heldout": {
+        "passed": 6,
+        "calls": 9,
+        "positive_trades": 2,
+        "truncated": 2
+      },
+      "official_train_seen": {
+        "passed": 6,
+        "calls": 6,
+        "positive_trades": 3,
+        "truncated": 0
+      }
+    },
+    {
+      "step": 56,
+      "completion_loss": 0.6420502246667942,
+      "current_first_turn": {
+        "calls": 16,
+        "valid_actions": 12,
+        "positive_captured": 3,
+        "positive_cases": 8,
+        "negative_correct_waits": 1,
+        "both_correct": 0,
+        "unaffordable": 3,
+        "no_tool": 1,
+        "truncated": 1,
+        "generated_tokens": 3643
+      },
+      "official_heldout": {
+        "passed": 9,
+        "calls": 9,
+        "positive_trades": 5,
+        "truncated": 0
+      },
+      "official_train_seen": {
+        "passed": 6,
+        "calls": 6,
+        "positive_trades": 3,
+        "truncated": 0
+      }
+    },
+    {
+      "step": 84,
+      "completion_loss": 0.6274019355575243,
+      "current_first_turn": {
+        "calls": 16,
+        "valid_actions": 14,
+        "positive_captured": 3,
+        "positive_cases": 8,
+        "negative_correct_waits": 1,
+        "both_correct": 1,
+        "unaffordable": 2,
+        "no_tool": 0,
+        "truncated": 0,
+        "generated_tokens": 3223
+      },
+      "official_heldout": {
+        "passed": 8,
+        "calls": 9,
+        "positive_trades": 5,
+        "truncated": 0
+      },
+      "official_train_seen": {
+        "passed": 6,
+        "calls": 6,
+        "positive_trades": 3,
+        "truncated": 0
+      }
+    },
+    {
+      "step": 112,
+      "completion_loss": 0.6249006620297829,
+      "current_first_turn": {
+        "calls": 16,
+        "valid_actions": 13,
+        "positive_captured": 3,
+        "positive_cases": 8,
+        "negative_correct_waits": 0,
+        "both_correct": 0,
+        "unaffordable": 3,
+        "no_tool": 0,
+        "truncated": 0,
+        "generated_tokens": 2064
+      },
+      "official_heldout": {
+        "passed": 9,
+        "calls": 9,
+        "positive_trades": 6,
+        "truncated": 0
+      },
+      "official_train_seen": {
+        "passed": 6,
+        "calls": 6,
+        "positive_trades": 3,
+        "truncated": 0
+      }
+    }
+  ],
+  "next": "Correctly stopped GPU re-evaluation of original base, step84 and step112, same 31 cases each; zero training updates.",
+  "cpu_tests_passed": 10,
+  "cpu_test_seconds": 18.586,
+  "cpu_test_log": "/tmp/adl_official_eos_tests.log",
+  "gpu_recheck_started_by_codex": false,
+  "sources": {
+    "training/official_buyer_train.py": "60551847800d6ef90231144d30dfd88b5c3f32f59157e49422d1365d59b90d7f",
+    "training/official_buyer_report.py": "11736935bf2d233f3268bb578dfd1bd61ba51e26849fe3fecea7a4fb43f1cab3",
+    "training/recheck_official_buyer.py": "184ae5cc0e781d7c0f9b1158ce48317741efeab582bb7190209d05b9ecfc72fd",
+    "training/audit_official_stops.py": "09ec3474068160ee290502287f4c818aaef799dd90732aeee4804dcf66141cc3",
+    "training/test_official_buyer.py": "d377da069eeffeee864b0c0031e93bd0465537eabfc5b66991821b0b7920b715"
+  }
+}

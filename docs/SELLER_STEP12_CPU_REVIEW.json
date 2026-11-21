@@ -1,0 +1,60 @@
+{
+  "cpu_only": true,
+  "gpu_work": false,
+  "tests_passed": 7,
+  "test_log": "/tmp/adl_seller_step12_tests.log",
+  "prepared_folder": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/results/basic_checks/20261121-183332_seller_step12_k88_h5cq",
+  "new_real_actions_scheduled": 450,
+  "cached_actions": 900,
+  "plan": {
+    "experiment": "seller_step12_cached_controls_v1",
+    "seed": 5,
+    "cached": {
+      "starter": {
+        "arm": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/results/basic_checks/20261121-151510_seller_models_87fz7bkq/starter",
+        "initial_signature": "58340378f3a8b4ca6a9a50f516987e1699b839898c5f1439409d0d4af2ce2f5f",
+        "mock": false,
+        "files": {
+          "/mnt/data1/hank/ADL/2026-ADL-Final-Release/results/basic_checks/20261121-151510_seller_models_87fz7bkq/starter/suite.json": "a7995a1cb2d6706cfa6d89f13a6c565b484ecb2a030a4327683cd14c47e0bc41",
+          "/mnt/data1/hank/ADL/2026-ADL-Final-Release/results/basic_checks/20261121-151510_seller_models_87fz7bkq/starter/wrapper_result.json": "b875738abb322208545914129ccc61e99e2c4206598abda2a7345bc78c731a64",
+          "/mnt/data1/hank/ADL/2026-ADL-Final-Release/results/basic_checks/20261121-151510_seller_models_87fz7bkq/starter/run_market_20261121-151936/config.yaml": "b78bda1b9bbd2c034b6e8b447d59d226421815bca4416c13d7ec1772e4b1880b",
+          "/mnt/data1/hank/ADL/2026-ADL-Final-Release/results/basic_checks/20261121-151510_seller_models_87fz7bkq/starter/run_market_20261121-151936/metadata.json": "a0894027256c29fe4837fc663b0d01d3f04a14726afbb8697620d47bcfabca8d",
+          "/mnt/data1/hank/ADL/2026-ADL-Final-Release/results/basic_checks/20261121-151510_seller_models_87fz7bkq/starter/run_market_20261121-151936/markets/e0_m0/events.jsonl": "12a7af32ec89ed9dab7b2d350c13247e4ab9b7b8999033302e74ce7c4fa892e7",
+          "/mnt/data1/hank/ADL/2026-ADL-Final-Release/results/basic_checks/20261121-151510_seller_models_87fz7bkq/starter/run_market_20261121-151936/markets/e0_m0/final.json": "93d68bf8186caa4589ef94df41ca32149853a83dd5898aec50f4c346ad0b2dc8",
+          "/mnt/data1/hank/ADL/2026-ADL-Final-Release/results/basic_checks/20261121-151510_seller_models_87fz7bkq/starter/run_market_20261121-151936/markets/e0_m0/scores.json": "a149772cb45e3e9716844fe784e1c22a8e246e51f41235ff6fccbe7af2438e50"
+        }
+      },
+      "step46": {
+        "arm": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/results/basic_checks/20261121-151510_seller_models_87fz7bkq/step46",
+        "initial_signature": "58340378f3a8b4ca6a9a50f516987e1699b839898c5f1439409d0d4af2ce2f5f",
+        "mock": false,
+        "files": {
+          "/mnt/data1/hank/ADL/2026-ADL-Final-Release/results/basic_checks/20261121-151510_seller_models_87fz7bkq/step46/suite.json": "615f020fe1056bf6b7ac606042acfd3af3a0f69a1ed5218ce76d0dcc277325fc",
+          "/mnt/data1/hank/ADL/2026-ADL-Final-Release/results/basic_checks/20261121-151510_seller_models_87fz7bkq/step46/wrapper_result.json": "ef2376c23c65e4f6e55d78e1f53dbcf4d737b91bf7e4e72f6130651858186a41",
+          "/mnt/data1/hank/ADL/2026-ADL-Final-Release/results/basic_checks/20261121-151510_seller_models_87fz7bkq/step46/run_market_20261121-155756/config.yaml": "dd7d8c8bbb959285f89b3b7732862c3ba3d00418a48bf456ece2678d517d2971",
+          "/mnt/data1/hank/ADL/2026-ADL-Final-Release/results/basic_checks/20261121-151510_seller_models_87fz7bkq/step46/run_market_20261121-155756/metadata.json": "9a6dbd1d9e380998d9c220ab1bb74d0c8fc341c79abbc61bc729aa78606c6960",
+          "/mnt/data1/hank/ADL/2026-ADL-Final-Release/results/basic_checks/20261121-151510_seller_models_87fz7bkq/step46/run_market_20261121-155756/markets/e0_m0/events.jsonl": "e4b5f176c3a7bb76eb33e7abcb160d9194874bc7a353a7186bd022bb288b048c",
+          "/mnt/data1/hank/ADL/2026-ADL-Final-Release/results/basic_checks/20261121-151510_seller_models_87fz7bkq/step46/run_market_20261121-155756/markets/e0_m0/final.json": "87c35bd7add7e0231c932cc4845052facad6450d832d4f86f5e5190314ded6f5",
+          "/mnt/data1/hank/ADL/2026-ADL-Final-Release/results/basic_checks/20261121-151510_seller_models_87fz7bkq/step46/run_market_20261121-155756/markets/e0_m0/scores.json": "e63a6bfc120ff602eddbb2105c5527ee5665d4eb01d98a8239021bdf1310e5e1"
+        }
+      }
+    },
+    "arm": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/results/basic_checks/20261121-183332_seller_step12_k88_h5cq/step12",
+    "initial_signature": "58340378f3a8b4ca6a9a50f516987e1699b839898c5f1439409d0d4af2ce2f5f",
+    "new_actions": 450,
+    "cached_actions": 900,
+    "total_reviewed_actions": 1350,
+    "mock": false,
+    "automatic_promotion": false,
+    "training_updates": 0
+  },
+  "candidate": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/training/runs/20261121-135008_seller_official_9d95_ubx/checkpoints/step_0012",
+  "candidate_fingerprints": {
+    "adapter_config.json": "3f76526075f53749c5ecb75b2b77b4c83f1727a7c3862523586c21145411a080",
+    "adapter_model.safetensors": "870ebda16727b93c581b7926c295eb43e89431bf9f6faea202319f79787679ba"
+  },
+  "source_guard": true,
+  "matched_initial_state": true,
+  "real_models_evaluated": false,
+  "stock_correction": "Actual serialized model input cross-checked against initial-stock minus prior-tick trades; do not use mutable event stock as a decision snapshot."
+}

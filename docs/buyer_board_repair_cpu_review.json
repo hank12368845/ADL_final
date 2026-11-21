@@ -1,0 +1,61 @@
+{
+  "status": "CPU preparation passed; no GPU training or inference launched",
+  "cpu_regressions": {
+    "passed": 43,
+    "log": "/tmp/adl_board_repair_all_tests.log"
+  },
+  "data_manifest_sha256": "efd642afb4a6f13aad286ebb2bf73faef9cdf5febd046199ec1e46978ea95f4c",
+  "train_rows": 256,
+  "validation_rows": 384,
+  "train_actions": {
+    "buy_listed": 128,
+    "wait": 96,
+    "accept_offer": 32
+  },
+  "histories": {
+    "fresh": 128,
+    "recorded": 128
+  },
+  "personas": {
+    "1": 87,
+    "3": 86,
+    "2": 83
+  },
+  "parent_sample_ids_excluded": 256,
+  "warm_start": {
+    "parent_step": 32,
+    "local_start_step": 0,
+    "optimizer": "new AdamW",
+    "scheduler": "new warmup/cosine",
+    "note": "Adapter warm start; not optimizer resume. Local step16/32 are additional updates."
+  },
+  "parent_fingerprints": {
+    "adapter_config.json": "3f76526075f53749c5ecb75b2b77b4c83f1727a7c3862523586c21145411a080",
+    "adapter_model.safetensors": "661fcc7b9961e3bae604bf4247f3ec3601d069e8e19ea8915851cb15c6ea7d63"
+  },
+  "all_256_samples_covered_once": true,
+  "planned_samples_by_rank": {
+    "0": 128,
+    "1": 128
+  },
+  "validation_and_test_copied_byte_identical": true,
+  "native_thinking_ON": true,
+  "fake_evaluation": {
+    "calls": 1152,
+    "gpu_routes": {
+      "0": 576,
+      "1": 576
+    },
+    "note": "Fake responses only; verified step16 selection when step32 regresses."
+  },
+  "sources_sha256": {
+    "training/board_repair_data.py": "2874901551c0466597aaa334756afc61fe7df679f28e89234b6b3e42c66bf561",
+    "training/board_repair_sampling.py": "41db9fb9dc7071edf4a1c12d6dfe6357a50a4294ac0defc169fe9023b6acd262",
+    "training/board_repair_setup.py": "75b4c9b71ed1512f5aea55713886d4b2ce84d7a5ca85bdadb7cb11b6bbb1932e",
+    "training/evaluate_board_repair.py": "c3dee669a3e0906de86d2bb6a4351f8076c4be00730eac58f43d58a2139abfd1",
+    "training/test_board_repair.py": "23fe44d34bba5ebf3446b91675ce943999a475f21cb1fbd81af92c6c5a7a0e62",
+    "training/buyer_operations_train.py": "6cd5128523bc0c7101001b2a139b75f983770edcdf9f463edbc0fbcaeb5667fc",
+    "training/train_buyer_operations.py": "b8e5336f90dd03ed10e61fdb12d77d2153ee59cff2a64630599388ff02c97efc",
+    "training/configs/buyer_board_repair_v1.yaml": "c802d44e48fe637bb4859fe27aec3fae6a72e89885df00cb725c747deb92dfa0"
+  }
+}

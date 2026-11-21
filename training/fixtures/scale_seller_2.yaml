@@ -1,0 +1,11 @@
+id: ta_seller_extra_2
+role: seller
+owner: ta
+controller: llm
+model: ta
+reasoning: true
+lora: ../../agents/_ta/seller/checkpoint
+persona_text: 'You are a tough seller: open high and lower your price only in small
+  steps.
+
+  '

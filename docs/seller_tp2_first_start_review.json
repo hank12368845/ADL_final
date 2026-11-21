@@ -1,0 +1,25 @@
+{
+  "run_folder": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/results/basic_checks/20261121-005141_seller_tp2_wxce8m8i",
+  "gpu_work_by_codex": false,
+  "source_guard_passed": true,
+  "startup_succeeded": true,
+  "full_market_completed": false,
+  "finished_actions_at_review": 0,
+  "model_loading_gib_per_rank_reported": 4.88,
+  "kv_cache_available_gib_per_rank_reported": 3.28,
+  "kv_cache_token_capacity": 207872,
+  "max_concurrency_at_64000_tokens": 3.25,
+  "observed_aggregate_decode_tokens_per_second_range": [
+    92.2,
+    125.6
+  ],
+  "p2p_custom_allreduce_enabled": false,
+  "allreduce_backend": "PYNCCL",
+  "stop_signal": "SIGINT",
+  "stop_time_log": "2026-11-21 00:54:33",
+  "limitations": [
+    "Observed startup and partial first-batch generation, not a complete-market fit or speed benchmark.",
+    "The engine records actions only after all15 decisions for a tick complete.",
+    "Do not change frozen sources/personas/models while resuming this experiment."
+  ]
+}

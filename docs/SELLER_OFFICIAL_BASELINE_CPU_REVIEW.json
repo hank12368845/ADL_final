@@ -1,0 +1,186 @@
+{
+  "cpu_only": true,
+  "tests_passed": 9,
+  "gpu_work": false,
+  "source": {
+    "repo": "miulab/ADL26W-final-train",
+    "revision": "fa0f94cff3eeed5bc54da597ad5c2a45ef491e45",
+    "files": {
+      "README.md": {
+        "bytes": 1050,
+        "sha256": "90a463f93aac2e467f0e39bd7a22b5ee891d97d5aec1786451013e1fee107965"
+      },
+      "data/train-00000-of-00001.parquet": {
+        "bytes": 87733052,
+        "sha256": "85e4824b750cb42d77513c16759b0860ee90b1d0e55b1c1cb87e184a29dfa815"
+      }
+    }
+  },
+  "splits": {
+    "train": {
+      "examples": 363,
+      "eligible_before_cap": 363,
+      "actions": {
+        "set_price": 227,
+        "make_offer": 92,
+        "post_to_room": 12,
+        "send_message": 28,
+        "wait": 4
+      },
+      "personas": {
+        "2": 155,
+        "3": 79,
+        "1": 129
+      },
+      "trajectories": 119,
+      "market_groups": 36,
+      "mean_tokens": 7028.900826446281,
+      "max_tokens": 8188,
+      "product_counts": {
+        "12": 349,
+        "6": 13,
+        "24": 1
+      },
+      "history_turns": {
+        "0": 54,
+        "2": 195,
+        "1": 114
+      },
+      "raw_sha256": "077a7da236aa843eddf86f4d078730cc872df9db4bdd50e7eb85d786decaad9d",
+      "tokens_sha256": "9facff1da65682169262d496a57f87f27cd5dc092d94e47046e1d718699ca51b"
+    },
+    "validation": {
+      "examples": 14,
+      "eligible_before_cap": 14,
+      "actions": {
+        "set_price": 7,
+        "send_message": 2,
+        "make_offer": 5
+      },
+      "personas": {
+        "2": 6,
+        "1": 5,
+        "3": 3
+      },
+      "trajectories": 11,
+      "market_groups": 3,
+      "mean_tokens": 7280.142857142857,
+      "max_tokens": 8132,
+      "product_counts": {
+        "12": 8,
+        "6": 6
+      },
+      "history_turns": {
+        "0": 5,
+        "1": 1,
+        "2": 8
+      },
+      "raw_sha256": "08dc35f34a48825bb9f1d2806b9fc39689c3963070241046d34de6a706ff245b",
+      "tokens_sha256": "82e2006d0f003cb2deb027c8e4ffe068de2a0f8211c2c224b0afa276a92585c4"
+    },
+    "test": {
+      "examples": 35,
+      "eligible_before_cap": 37,
+      "actions": {
+        "set_price": 22,
+        "make_offer": 10,
+        "send_message": 1,
+        "post_to_room": 2
+      },
+      "personas": {
+        "2": 23,
+        "3": 9,
+        "1": 3
+      },
+      "trajectories": 12,
+      "market_groups": 3,
+      "mean_tokens": 6941.2,
+      "max_tokens": 8021,
+      "product_counts": {
+        "12": 33,
+        "6": 2
+      },
+      "history_turns": {
+        "1": 16,
+        "2": 12,
+        "0": 7
+      },
+      "raw_sha256": "e70ba48b52609e87adce4952dd02544b405c2ac8381ae2df7c26fcd453be7fc6",
+      "tokens_sha256": "87075c0c449e06fea5212a2095dd720fdde44e500cc301fc9e290fdf38e986c8"
+    }
+  },
+  "curation": {
+    "source_seller_decisions": 38772,
+    "skip_no_native_reasoning": 22511,
+    "eligible": 414,
+    "skip_listing_after_last_buy_turn": 132,
+    "skip_outside_current_horizon": 8919,
+    "skip_failed_or_missing_result": 2042,
+    "skip_nonpositive_margin": 284,
+    "skip_wait_with_unlisted_stock": 1028,
+    "skip_multiunit_offer_old_demand": 764,
+    "skip_offer_without_next_accept_turn": 75,
+    "skip_message_after_last_action": 32,
+    "skip_reasoning_over_384_tokens": 1308,
+    "skip_reasoning_old_rule_reference": 520,
+    "skip_system_current_overlength": 664,
+    "skip_no_stock_or_excess_qty": 47,
+    "skip_too_many_offers": 14,
+    "skip_argument_length": 18
+  },
+  "steps": 46,
+  "warmup": 3,
+  "checkpoints": [
+    12,
+    23,
+    46
+  ],
+  "global_batch": 8,
+  "unique_train": 363,
+  "exposures": 368,
+  "case_kinds": {
+    "current_rule": 12,
+    "official_heldout": 6,
+    "p1_v1_control": 2,
+    "seen": 5
+  },
+  "native_calls_all_versions": 100,
+  "pinned_training_sources": {
+    "/mnt/data1/hank/ADL/2026-ADL-Final-Release/training/train_official_seller.py": "bbdecdd2e6258a49c4ef35aab3e9a688d350e6cc5f04bed9cf222b93e847cf0e",
+    "/mnt/data1/hank/ADL/2026-ADL-Final-Release/training/official_seller_data.py": "7044c8a9e6d2f4e3712c6e50cf25b32d97561bb566c6eafa6f46a67be1a55bef",
+    "/mnt/data1/hank/ADL/2026-ADL-Final-Release/training/official_seller_train.py": "01bebb6d8770d5efb9a4893697909333e0dbceac7bf349af3ff0cf172ffe89a1",
+    "/mnt/data1/hank/ADL/2026-ADL-Final-Release/training/buyer_operations_train.py": "f053e67c3b90a5410e0fdf38d0916a256a2f0c728e9e5309840363089c34276a",
+    "/mnt/data1/hank/ADL/2026-ADL-Final-Release/training/buyer_surgical_train.py": "830c4556fa476116cad6f87b48578bbeedc76b96cb6ba5b5780047e66edaa946",
+    "/mnt/data1/hank/ADL/2026-ADL-Final-Release/training/official_buyer_train.py": "60551847800d6ef90231144d30dfd88b5c3f32f59157e49422d1365d59b90d7f",
+    "/mnt/data1/hank/ADL/2026-ADL-Final-Release/training/reasoning_checkpoint.py": "cde21ba845780b331983199e2ac10ea2f5344e4071cc4e4da10e6380ce8ed860",
+    "/mnt/data1/hank/ADL/2026-ADL-Final-Release/training/buyer_hf_check.py": "1938af9ad5c12f6db58e6a8833f3d878a1d51a9ce67b45153bca430fbf2e6593",
+    "/mnt/data1/hank/ADL/2026-ADL-Final-Release/training/decision_ablation.py": "2bbd91719ac96e4687548f5afad5bed1688a4fb738cb9176972c2d0c1e67d5d0",
+    "/mnt/data1/hank/ADL/2026-ADL-Final-Release/training/basic_checks.py": "8f6b8e969b0e0966bdbfc75878a006641891f71325756b78c7cfc1dde2fbd861",
+    "/mnt/data1/hank/ADL/2026-ADL-Final-Release/training/local_resources.py": "aa7d6975de7ddf9c7abc54d7a6d9d4e03983360685ec026726216929ab9893ad",
+    "/mnt/data1/hank/ADL/2026-ADL-Final-Release/adlmarket/schema.py": "bd760da4e613e6e0eebfab30bd9240e671be12c76e44bc1c8366fcd0acd5f766",
+    "/mnt/data1/hank/ADL/2026-ADL-Final-Release/adlmarket/prompts.py": "d5a0338c37e302e475eca58c73a76d64ae6c8e58a4e4c30764f85d380724b5e4",
+    "/mnt/data1/hank/ADL/2026-ADL-Final-Release/adlmarket/config.py": "9d0bb5e0e53981bba3892b793dc694f515e8bf59072c9a98b80de554ebd47cbb",
+    "/mnt/data1/hank/ADL/2026-ADL-Final-Release/adlmarket/__init__.py": "bde553a751e5e3b63d973539da14c3b3bfd2967037dc5dcc2fccf6a6947f8a66",
+    "/mnt/data1/hank/ADL/2026-ADL-Final-Release/adlmarket/policies.py": "fcadfd9d1f5da91a94a44bea4eeb9ee3420bd71377292eb434cfaebeffac3317",
+    "/mnt/data1/hank/ADL/2026-ADL-Final-Release/adlmarket/engine.py": "cce714346c82b9b21d8a2f54528b63b7a028cef3142e2312efaa99e538805087",
+    "/mnt/data1/hank/ADL/2026-ADL-Final-Release/adlmarket/serving.py": "e929c7120473a638be078cd7c0acdc21f0d1c29a326a865d369e51865ebc096b",
+    "/mnt/data1/hank/ADL/2026-ADL-Final-Release/adlmarket/report.py": "04bcf5d69d8f5fe36fa9100812a60427a56157a44b32687170c544e407cfcba9",
+    "/mnt/data1/hank/ADL/2026-ADL-Final-Release/adlmarket/casting.py": "d7ff3a5e72cd33ae831ff9a39152c8a349a9190eddb091013ecc83001575d382",
+    "/mnt/data1/hank/ADL/2026-ADL-Final-Release/adlmarket/snapshot.py": "cf9452604a7d52ead41f4a9ccbf5f1a39c2ce36ac161740a56b4141098ff862b",
+    "/mnt/data1/hank/ADL/2026-ADL-Final-Release/adlmarket/cli.py": "c7f5db595134ef8e9cde87fa22997cd160944d6a25bff0663f29f5aca38bc733",
+    "/mnt/data1/hank/ADL/2026-ADL-Final-Release/adlmarket/tools.py": "f0b76fee1686a37cd091ad640256b0b20263ea7cb7b8ff0fc9af44fa20b34f47",
+    "/mnt/data1/hank/ADL/2026-ADL-Final-Release/adlmarket/scoring.py": "8fb61c931458deb3a140f55f0876801797ba046defcd78a4542a5cf85e788581",
+    "/mnt/data1/hank/ADL/2026-ADL-Final-Release/adlmarket/client.py": "64e073b1320e0276038bc5751e0b78436440b6dbf8ed748f9c54598cd556b493",
+    "/mnt/data1/hank/ADL/2026-ADL-Final-Release/adlmarket/market.py": "13d32b74ee218ab53b505393fd561f95a212d709618a6ba40389c4d3837ef760",
+    "/mnt/data1/hank/ADL/2026-ADL-Final-Release/adlmarket/setups.py": "4aec5c97ce49998f3f88514e4811db6414f4607b6d075de7a8ce269f9859d7a6",
+    "/mnt/data1/hank/ADL/2026-ADL-Final-Release/training/configs/seller_official_v1.yaml": "32b275ef0a452f74b586775d9f04fe46bcbc4636ac39020a9456134b2b753dfd",
+    "/mnt/data1/hank/ADL/2026-ADL-Final-Release/training/persona_versions/seller_checkpoint1_v1/persona_1.md": "0afd171e227d9b32570c51d694b33f9c464ce5a84e2c0a1ff12acb5a1ffb68c8",
+    "/mnt/data1/hank/ADL/2026-ADL-Final-Release/training/persona_versions/seller_checkpoint1_v2/persona_2.md": "d3623e14cb6851fab9f2cae1652d48ab0017bf144cea9cb3fddb152648a00996",
+    "/mnt/data1/hank/ADL/2026-ADL-Final-Release/training/persona_versions/seller_checkpoint1_v2/persona_1.md": "251a47315c2799962b8f8d6a942660eea4a138aa12a123bc5e066e83eb71d20f",
+    "/mnt/data1/hank/ADL/2026-ADL-Final-Release/training/persona_versions/seller_checkpoint1_v2/persona_3.md": "5abc05a433bfc2385ffa409ea1777e0c2c22bdbb206c6af4b5592840e084ac26"
+  },
+  "kernel_dispatch_cpu_log": "/tmp/adl_seller_kernel_dispatch_cpu.log",
+  "gpu_numerics_and_memory_verified": false,
+  "automatic_promotion": false,
+  "automatic_market": false
+}

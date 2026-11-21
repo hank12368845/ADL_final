@@ -1,0 +1,9 @@
+{
+  "cpu_only": true,
+  "gpu_query_mocked": true,
+  "gpu_launch_mocked": true,
+  "tests_passed": 7,
+  "actual_wait_or_gpu_work": false,
+  "test_log": "/tmp/adl_gpu_queue_cpu_tests.log",
+  "source_sha256": "bf31563c4d8e2a88044f1cc0c05d185dcd795ed841b4b959bd851c129b61f232"
+}

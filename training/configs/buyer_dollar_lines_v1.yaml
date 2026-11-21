@@ -1,0 +1,10 @@
+experiment: buyer_dollar_lines_v1
+data_dir: training/data/buyer_dollar_lines_v1
+thinking: true
+learning_rate: 1.0e-05
+warmup_steps: 2
+max_steps: 12
+checkpoint_steps: [6, 12]
+effective_batch_size: 8
+max_length: 12288
+seed: 20261122

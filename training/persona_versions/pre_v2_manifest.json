@@ -1,0 +1,26 @@
+{
+  "agents/example_student/buyer/persona_1.md": {
+    "chars": 4122,
+    "sha256": "4d43ae24d10dc6e8fb1af1d121940d8065652498b250e11f51d777d950133342"
+  },
+  "agents/example_student/buyer/persona_2.md": {
+    "chars": 4539,
+    "sha256": "4d278a0b0622c51a0c38934bd7689f59375132f994daf8ed04a35dc93d24cb0c"
+  },
+  "agents/example_student/buyer/persona_3.md": {
+    "chars": 4479,
+    "sha256": "d5f071763b2d751367da6b5f1285f6e696334220e99d3e72ab650ef36a4c8bd9"
+  },
+  "agents/example_student/seller/persona_1.md": {
+    "chars": 92,
+    "sha256": "c8ab146f332de01138387eef76eeeb38f8439505a88bdacc11ba05942c2f4b4a"
+  },
+  "agents/example_student/seller/persona_2.md": {
+    "chars": 76,
+    "sha256": "280a530b36700155760feb2dbf42fa5c71ffdea12cfbf106fc09ff9eecd5a7cd"
+  },
+  "agents/example_student/seller/persona_3.md": {
+    "chars": 68,
+    "sha256": "f9d0199150cd9c2adeaed6cc63c35aabe2a9c85af8e5c9c6aa52af440fd9dfa7"
+  }
+}

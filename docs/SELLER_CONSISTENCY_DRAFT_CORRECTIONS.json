@@ -1,0 +1,49 @@
+{
+  "cpu_only": true,
+  "no_gpu_run_exists": true,
+  "changes": [
+    {
+      "id": "18ba-44d9e96a_turn17__soldout_switch",
+      "before": {
+        "name": "set_price",
+        "arguments": {
+          "product_id": "P50",
+          "price": 17.5,
+          "grade": "high",
+          "private_state": "Current P48=0; P50=1. Use current stock rather than the old plan."
+        }
+      },
+      "after": {
+        "name": "set_price",
+        "arguments": {
+          "product_id": "P45",
+          "price": 13.95,
+          "grade": "high",
+          "private_state": "Current P48=0; P45=1. Use current stock rather than the old plan."
+        }
+      }
+    },
+    {
+      "id": "26f5-74c74445_turn17__soldout_switch",
+      "before": {
+        "name": "set_price",
+        "arguments": {
+          "product_id": "P50",
+          "price": 17.5,
+          "grade": "high",
+          "private_state": "Current P19=0; P50=1. Use current stock rather than the old plan."
+        }
+      },
+      "after": {
+        "name": "set_price",
+        "arguments": {
+          "product_id": "P48",
+          "price": 16.95,
+          "grade": "high",
+          "private_state": "Current P19=0; P48=1. Use current stock rather than the old plan."
+        }
+      }
+    }
+  ],
+  "note": "Before delivery, the control alternative was constrained to initially allocated products. Two newly-created draft controls were corrected; original v1 and all native targets unchanged."
+}

@@ -1,0 +1,11 @@
+id: ta_seller_extra_1
+role: seller
+owner: ta
+controller: llm
+model: ta
+reasoning: true
+lora: ../../agents/_ta/seller/checkpoint
+persona_text: 'You are a fair seller: list near the list price and give a small discount
+  for a quick deal.
+
+  '
