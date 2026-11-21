@@ -1,5 +1,9 @@
 # 專案實作指引
 
+最新Seller結果見Guideline66.2與docs/SELLER_CONSISTENCY_V2_RESULTS.md：003711 consistency補課18正常停損、exit0。有利報價7→5/9、條件題5→7/12、截斷7→8；不升級或續36。p2 wait仍錯認市場結束且記憶庫存過期；p1新增R6／漏think閉合；p3 loop由think轉到private_state，未修完整工具收束。保留starter保底與原step12，不自動新訓練／市場／部署。已確認144曝光、optimizer18、來源與496有限tensors、快kernel正常，總37分12含推論，純訓練7分15；CPU審查另存sidecar，不改凍結來源。Checkpoint1優先既有版本提交核對；GPU仍使用者啟動。
+
+最新Seller啟動修正見Guideline66.1及docs/SELLER_CONSISTENCY_V2.md末節：232603 run在真實盤面HF模板渲染遇到JSON-string arguments，未反傳／訓練／評估；新增副本解析、CPU真tokenizer全30題預檢，routing／generation共用，不改原資料或harness。使用原training/train_seller_consistency.py --gpus 0,1 --wait建立新run，不resume無更新且source已改的232603。GPU仍使用者啟動；不把Git憑證檔缺少當模型錯誤。
+
 最新Seller工作見Guideline66與docs/SELLER_CONSISTENCY_V2.md：使用者要求CPU一致性修補及下一步指令，已建立獨立seller_consistency_v2；原train363隔離8筆舊horizon衝突，保留3個合法offer expiry與公開bluff，保留原來源／權重／persona。starter保底、step12父模型；不盲測其他checkpoint。
 下一步由使用者執行training/train_seller_consistency.py --gpus 0,1 --wait，216官方原答案＋72標記engine controls、36步上限、LR5e-6／warmup3、存18／36、普通native CE，不換思考格式。最長CUDA反傳預檢＋父模型30題＋第18步30題門檻，有改善且保住各persona才繼續；父模型已全過待修題則更新前停止。最多90推論，不自動部署／加epoch／市場。CPU通過不是新模型成績，CUDA與profit仍待驗證。GPU仍使用者啟動，雙卡優先／單卡fallback、有進度／ETA與log。--cpu-check零GPU；停止門檻的run不可resume繞過。
 

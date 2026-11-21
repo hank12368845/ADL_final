@@ -69,3 +69,13 @@ CUDA_VISIBLE_DEVICES='' /home/hank/.cache/adl_final_venv/bin/python -m unittest 
 ```
 
 未完成工作可用 `--resume 實際run路徑 --gpus 0,1 --wait`，需相同 GPU 數及原 source／資料／環境，從完整 checkpoint 的 optimizer／RNG 接續。已因門檻停止的 run 只重建報表，不可用 resume 繞過停損。沒有 checkpoint 的失敗會從父模型重新開始，不冒充接續。
+
+## 2026-11-21 首次啟動的模板格式錯誤已修正
+
+`232603_seller_consistency_mge63af6` 載入模型後，在 inference routing 的 Qwen 模板渲染失敗：`TypeError: Can only get item pairs from a mapping.` 三個真實市場盤面各有六筆歷史 OpenAI tool calls，arguments 是 JSON 字串；HF Qwen 模板需要 dict。原 CPU routing 測試只用了 stub tokenizer，沒有抓到真實模板相容性問題。
+
+新增 `hf_messages`／`render_prompt`：只在推論副本解析這 18 個 arguments 字串為字典，保持每個參數值、完整 history／observation 及原始檔案不變。不是部署 formatter，也不提供正確答案。routing 與自由生成共用同一入口。
+
+CPU prepare 現在會用指定 revision 的真實 tokenizer 渲染全 30 題，檢查長度並記錄 prompt hash，先過才查 GPU／載入權重；resume 也比對。另以真實 tokenizer 測單／雙副本 routing；錯誤 JSON／非物件參數直接拒絕。27 個原本可用的小題 prompt byte 完全不變。
+
+失敗 run 尚無反傳預檢、optimizer 更新、評估輸出或 checkpoint，父 step12 未改。原 run 保留診斷；本次修改了 wrapper／worker 來源指紋，請直接用上方原指令建立新 run，**不要 resume 232603**。Codex 僅執行 CPU 檢查，沒有重啟 GPU。

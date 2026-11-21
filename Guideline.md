@@ -2782,3 +2782,18 @@ CPU另確認資料漏項：舊世界改為5round system時，只完整檢查reas
 第18步沒改善／回歸正常停損，不用resume繞過；不自動部署、加epoch或市場。原始風險語句須人工讀，不能把模型提及並否定舊R6計畫當作確定犯錯。輸出training/runs/<time>_seller_consistency_*/seller_consistency_review.md與runner.log、各存檔／rank決策／routing；--cpu-check不查GPU。預設兩卡／單卡fallback、每卡18GiB＋2GiBreserve、磁碟8GiB、有進度及ETA，等待時間未知；GPU仍使用者啟動。
 
 66節CPU驗收完成：12項測試、CLI --cpu-check及編譯均通過；包含原答案／整市場split／native EOS、合法expiry／stale note、初始分配與現況庫存限制、全wait／persona退化停損、思考閉合、長題分流、單／雙卡排隊的CPU stub流程。原135008訓練source/data/adapter guard與現用persona byte核對通過，證據docs/SELLER_CONSISTENCY_CPU_REVIEW.json。這些不是CUDA預檢或模型成績；尚未啟GPU。未交付草稿的兩個換貨control曾選到初始未分配商品，已在CPU修正並加防呆，證據docs/SELLER_CONSISTENCY_DRAFT_CORRECTIONS.json；官方原資料及216個原答案未改。
+
+### 66.1 首次GPU啟動遇到歷史工具參數序列化錯誤，修正CPU模板預檢
+
+使用者232603_seller_consistency_mge63af6只完成base載入，在assignments渲染失敗，未開始反傳／optimizer／父評估，沒有checkpoint。根因三個real盤面各六個history tool arguments是OpenAI JSON string，HF Qwen Jinja要求mapping；不是OOM或Git憑證問題。原CPU stub tokenizer測試覆蓋不足。
+worker增加hf_messages／render_prompt，只於副本json.loads這18個參數、保留history／obs與數值；routing及生成共用。CPU prepare在查GPU前用原生真tokenizer渲染全30題、長度／hash檢查，resume核對，真tokenizer的單／雙卡routing亦納入測試。資料與原權重不改、不更動TA harness或提供答案。
+使用原training/train_seller_consistency.py --gpus 0,1 --wait建立新run，不resume232603（source指紋已改，且尚無訓練更新可救）。Codex不代啟GPU；Git的~/.git-credentials不存在只表示未用該檔存憑證，不能當成本次模型中斷原因。
+
+66.1修正後14項CPU測試、真tokenizer全30題渲染及單／雙卡routing、CLI --cpu-check、py_compile皆通過；27個非real盤面prompt byte不變，18個JSON-string工具參數只在副本轉mapping，原history／obs／資料／父權重不變。證據docs/SELLER_CONSISTENCY_TEMPLATE_FIX_CPU_REVIEW.json，原失敗run另有failure_review.json。尚未由Codex重啟GPU或驗證反傳／模型成績。
+
+### 66.2 Seller consistency已完成18步並正常停損，不升級／續36
+
+使用者003711_seller_consistency_9gz5imr4完成，wrapper exit0／stopped_step18_gate，詳docs/SELLER_CONSISTENCY_V2_RESULTS.md及run內independent_consistency_review.json。父官方step12→補課18：有利報價7→5/9、有效輸出8→6/9，條件題5→7/12，官方val5→5/6，真實盤面guard1→1/3，截斷7→8/30，val NLL0.738044→0.738760。四項門檻失敗，不能鬆門檻或resume到36；沒有新profit成績，不把小題退步直接當市場profit下降。
+人工原文：p2 real_stale_inventory雖改wait避開無貨掛價，卻錯說R4剩5turn已接近結束，記憶仍寫P60=3（current0），不能說學會現況核對。p1 real_horizon父本次greedy可正常輸出，候選反而R6且漏</think>、315tokens遇EOS。p3 real_unfinished由think列清單loop轉成private_state列清單loop，仍耗滿4608，未根治完整工具收束。總wait兩版皆3，不是全wait塌縮；1024診斷上限與正式round額度不同。
+實際單GPU0、144曝光＝108官方＋36controls，精確前18batch、8個長history；optimizer18與496有限tensors核對。快kernel已啟用、最長CUDA反傳約30秒且無OOM。總37分12秒，純訓練至第18步7分15秒，training_finished的1197秒含末次評估勿誤讀；主要額外時間是前後60次推論驗收／載入等。
+保留starter保底／原官方step12候選，本輪不部署、不自動市場／重訓。Checkpoint1優先既有版本的提交核對；未來若修須重視private_state與整個工具/EOS收束、current-stock記憶更新，不能只壓短think或形式wait。CPU獨立重算／註記不改凍結訓練來源、資料或舊評分；GPU仍使用者啟動。

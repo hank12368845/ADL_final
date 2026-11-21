@@ -24,6 +24,11 @@ def prepare():
     from training.train_official_seller import check_run as check_parent
     if not DATA.exists():prepare_data()
     manifest=audit();write_review(DATA,manifest);check_parent(PARENT.parent.parent)
+    from transformers import AutoTokenizer
+    from training.seller_consistency_train import prompt_audit
+    tokenizer=AutoTokenizer.from_pretrained(manifest['base_model'],revision=manifest['revision'],local_files_only=True)
+    cases=json.loads((DATA/'evaluation_cases.json').read_text())
+    rendered=prompt_audit(cases,tokenizer)
     cfg=yaml.safe_load((ROOT/'training/configs/seller_official_v1.yaml').read_text())
     cfg.update(manifest['recipe']);cfg.update(experiment='seller_consistency_v2',seed=SEED,data_dir=str(DATA),parent_adapter=str(PARENT),
         data_manifest_sha256=sha(DATA/'manifest.json'),weight_decay=.01,history_turns=6,max_train_examples=288,
@@ -36,6 +41,7 @@ def prepare():
     receipt=ROOT/'.cache/fast_kernels/installed.json'
     if not receipt.is_file():raise ValueError('Fast-kernel overlay missing; no silent slow training')
     cfg['kernel_receipt_sha256']=sha(receipt)
+    cfg['prompt_audit']=rendered
     return cfg,manifest
 
 
@@ -105,6 +111,11 @@ def main(argv=None):
             check_fingerprint(cp,json.loads((cp/'checkpoint_complete.json').read_text())['adapter_fingerprints'])
             if any(not (cp/n).is_file() for n in ['optimizer.pt',*[f'rng_rank{r}.pt' for r in range(cfg['world_size'])]]):raise ValueError('Incomplete optimizer/RNG resume state')
             if not (folder/'native_step_0000.json').is_file():raise ValueError('Missing parent behavior control')
+        from transformers import AutoTokenizer
+        from training.seller_consistency_train import prompt_audit
+        tokenizer=AutoTokenizer.from_pretrained(cfg['base_model'],revision=cfg['revision'],local_files_only=True)
+        rendered=prompt_audit(json.loads((folder/'native_cases.json').read_text()),tokenizer)
+        if rendered!=cfg['prompt_audit']:raise ValueError('Rendered inference prompts changed')
     else:cfg,manifest=prepare()
     if args.cpu_check:
         print('PASS CPU only: 216 official replay +72 engine controls, 36 steps, parent+18/36 evaluations; no GPU query or model execution.',flush=True);return cfg

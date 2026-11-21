@@ -1,0 +1,24 @@
+{
+  "cpu_only": true,
+  "gpu_work_restarted": false,
+  "failed_run": "/mnt/data1/hank/ADL/2026-ADL-Final-Release/training/runs/20261121-232603_seller_consistency_mge63af6",
+  "failure": "HF Qwen history tool arguments JSON strings vs mapping",
+  "before_optimizer_update": true,
+  "original_data_and_parent_guard_passed": true,
+  "data_manifest_sha256": "001f2c8226ea7389c3aeceb213b0d3a977b8afe21f712f16b1239e35efa68ab3",
+  "tests": 14,
+  "test_result": "all passed; actual tokenizer on all 30 cases, single/dual routing, CLI cpu-check and py_compile passed",
+  "normalized_history_argument_strings": 18,
+  "real_cases": 3,
+  "original_non_real_prompts_identical": 27,
+  "inputs_and_training_targets_unchanged": true,
+  "code_sha256": {
+    "training/seller_consistency_train.py": "fa6855cf7942064072a41452b6621ba1a06b42bc426d4652df4b5b643b6827d0",
+    "training/train_seller_consistency.py": "9174cd76def3147dc210ffabdaf019c6f4b799fa9c47589a590f3e7415e21065",
+    "training/test_seller_consistency.py": "362ff5bb22cde3fceee4969ae192b4ec2a666ecdbba329c0036cc958a307bb5d"
+  },
+  "restart": "Create a fresh run with training/train_seller_consistency.py --gpus 0,1 --wait; do not resume the source-frozen failed run",
+  "limitations": [
+    "No new CUDA backward or model behavior verification; GPU remains user-launched."
+  ]
+}

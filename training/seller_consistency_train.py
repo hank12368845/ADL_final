@@ -1,6 +1,7 @@
 """Bounded Seller continuation; original native CE, fixed persona, explicit behavior gate."""
 from collections import Counter
 from contextlib import nullcontext
+import copy
 from datetime import timedelta
 import json
 import math
@@ -84,11 +85,49 @@ def gate(parent,candidate):
         note='Small development gate; not proof of realized profit. No automatic deployment or market.')
 
 
+def hf_messages(case):
+    """Convert OpenAI history argument serialization to HF template objects.
+
+    Saved market requests contain JSON strings in function.arguments, while
+    Qwen's native HF template iterates a mapping. Parse only that serialization;
+    preserve every history message, observation, argument value and source file.
+    """
+    messages=copy.deepcopy(case['messages'])
+    for message in messages:
+        for call in message.get('tool_calls') or []:
+            function=call['function'];args=function.get('arguments')
+            if isinstance(args,str):
+                try:args=json.loads(args)
+                except ValueError as error:raise ValueError(f"{case['name']}: invalid historical tool argument JSON") from error
+            if not isinstance(args,dict):raise ValueError(f"{case['name']}: historical tool arguments must be an object")
+            function['arguments']=args
+    return messages
+
+
+def render_prompt(case,tokenizer,tokenize=False):
+    return tokenizer.apply_chat_template(hf_messages(case),tools=case['tools'],tokenize=tokenize,
+        add_generation_prompt=True,enable_thinking=True)
+
+
+def prompt_audit(cases,tokenizer):
+    """Real tokenizer/template checks on CPU, before GPU planning or weights."""
+    import hashlib
+    from tqdm import tqdm
+    result=[]
+    for case in tqdm(cases,desc='CPU render Seller evaluation prompts',unit='cases'):
+        prompt=render_prompt(case,tokenizer);tokens=len(tokenizer.encode(prompt,add_special_tokens=False))
+        if tokens+case.get('max_new_tokens',1024)>64000:raise ValueError(f"{case['name']}: exceeds context limit")
+        parsed=sum(isinstance(c['function']['arguments'],str) for m in case['messages'] for c in m.get('tool_calls') or [])
+        result.append(dict(name=case['name'],prompt_tokens=tokens,parsed_history_argument_strings=parsed,
+            prompt_sha256=hashlib.sha256(prompt.encode()).hexdigest()))
+    return result
+
+
 def assignments(cases,tokenizer,world):
     """Balance long prompt/output cases across independent HF inference replicas."""
     costs=[]
     for i,c in enumerate(cases):
-        ids=tokenizer.apply_chat_template(c['messages'],tools=c['tools'],tokenize=True,add_generation_prompt=True,enable_thinking=True)
+        ids=render_prompt(c,tokenizer,tokenize=True)
         if len(ids)+c.get('max_new_tokens',1024)>64000:raise ValueError('Probe exceeds formal context limit')
         costs.append((len(ids)+4*c.get('max_new_tokens',1024),i))
     result=[[] for _ in range(world)];loads=[0]*world
@@ -157,7 +196,7 @@ def worker(folder):
                 losses.append(loss.item())
             for i in tqdm(routing[rank],desc=f'Seller decisions step{step} rank{rank}',unit='calls'):
                 c=cases[i];maximum=c.get('max_new_tokens',1024)
-                prompt=tokenizer.apply_chat_template(c['messages'],tools=c['tools'],tokenize=False,add_generation_prompt=True,enable_thinking=True)
+                prompt=render_prompt(c,tokenizer)
                 ids=tokenizer(prompt,add_special_tokens=False,return_tensors='pt').to(device)
                 with torch.autocast('cuda',dtype=torch.bfloat16):out=model.generate(**ids,max_new_tokens=maximum,do_sample=False,use_cache=True,pad_token_id=tokenizer.pad_token_id,eos_token_id=stops)
                 tail=out[0,ids.input_ids.shape[1]:];text=tokenizer.decode(tail,skip_special_tokens=False)

@@ -10,7 +10,7 @@ from contextlib import redirect_stdout
 from unittest.mock import patch
 
 from training.seller_consistency_data import DATA,V1,PARENT,ROOT,audit,horizon_findings,row_findings,stock_assertions,control,verify_target
-from training.seller_consistency_train import score,summarize,gate,assignments
+from training.seller_consistency_train import score,summarize,gate,assignments,hf_messages,render_prompt,prompt_audit
 
 
 class SellerConsistencyTests(unittest.TestCase):
@@ -120,6 +120,43 @@ class SellerConsistencyTests(unittest.TestCase):
             cfg=main(['--cpu-check'])
         self.assertEqual(cfg['learning_rate'],5e-6);self.assertEqual(cfg['parent_adapter'],str(PARENT))
         self.assertEqual(cfg['history_turns'],6)
+        self.assertEqual(len(cfg['prompt_audit']),30)
+        self.assertEqual(sum(r['parsed_history_argument_strings'] for r in cfg['prompt_audit']),18)
+
+    def test_all_actual_evaluation_prompts_render_before_gpu(self):
+        from transformers import AutoTokenizer
+        from training.official_buyer_data import BASE,MODEL_REVISION
+        tokenizer=AutoTokenizer.from_pretrained(BASE,revision=MODEL_REVISION,local_files_only=True)
+        before=copy.deepcopy(self.cases);report=prompt_audit(self.cases,tokenizer)
+        self.assertEqual(len(report),30)
+        real=[r for r in report if r['name'].startswith('real_')]
+        self.assertEqual(len(real),3);self.assertTrue(all(r['parsed_history_argument_strings']==6 for r in real))
+        for world in [1,2]:
+            routed=assignments(self.cases,tokenizer,world)
+            self.assertEqual(sorted(i for part in routed for i in part),list(range(30)))
+        for case in self.cases:
+            normalized=hf_messages(case)
+            self.assertEqual(len(normalized),len(case['messages']))
+            for original,message in zip(case['messages'],normalized):
+                if not original.get('tool_calls'):self.assertEqual(original,message)
+                else:
+                    for a,b in zip(original['tool_calls'],message['tool_calls']):
+                        args=a['function']['arguments'];expected=json.loads(args) if isinstance(args,str) else args
+                        self.assertEqual(b['function']['arguments'],expected)
+                        self.assertEqual(a['function']['name'],b['function']['name'])
+            if not case['name'].startswith('real_'):
+                raw=tokenizer.apply_chat_template(case['messages'],tools=case['tools'],tokenize=False,add_generation_prompt=True,enable_thinking=True)
+                self.assertEqual(raw,render_prompt(case,tokenizer))
+        self.assertEqual(self.cases,before)
+
+    def test_history_argument_normalization_rejects_malformed_data(self):
+        original=copy.deepcopy(next(c for c in self.cases if c['name'].startswith('real_')))
+        for invalid in ['[1,2]','not json',None]:
+            case=copy.deepcopy(original)
+            call=next(c for m in case['messages'] for c in m.get('tool_calls') or [])
+            call['function']['arguments']=invalid;before=copy.deepcopy(case)
+            with self.assertRaises(ValueError):hf_messages(case)
+            self.assertEqual(case,before)
 
     def test_long_case_routing_uses_all_replicas_and_is_complete(self):
         class Tokenizer:
